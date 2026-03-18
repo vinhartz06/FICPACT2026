@@ -795,10 +795,10 @@
                 Jelajahi keindahan Indonesia melalui permainan memori yang seru dan edukatif!
             </p>
             <div class="hero-cta">
-                <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
-                <a href="#" class="btn btn-secondary">Daftar</a>
-                {{-- <a href="{{ route('home') }}" class="btn btn-play">▶ Mainkan Sekarang</a>
-                <a href="{{ route('register') }}" class="btn btn-secondary">Daftar</a> --}}
+                {{-- <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
+                <a href="#" class="btn btn-secondary">Daftar</a> --}}
+                <a href="{{ route('login') }}" class="btn btn-play">▶ Mainkan Sekarang</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary">Daftar</a>
             </div>
         </div>
     </section>
