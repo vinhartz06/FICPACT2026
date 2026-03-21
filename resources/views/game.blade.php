@@ -84,24 +84,19 @@
                 <span class="text-lg sm:text-xl drop-shadow-sm" aria-hidden="true">🏠</span>
                 <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Beranda</span>
             </a>
-            @auth
-                <a href="#" id="nav-profil" class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
-                                  bg-white/5 hover:bg-white/20 transition-all 
-                                  backdrop-blur-sm border border-white/10">
-                    <span class="text-lg sm:text-xl drop-shadow-sm">👤</span>
-                    <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Profil</span>
-                </a>
-                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                    @csrf
-                    <button type="submit" title="Keluar dari akun / kembali ke beranda"
-                            class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
-                                   bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all 
-                                   backdrop-blur-sm border border-white/10 cursor-pointer">
-                        <span class="text-base sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
-                        <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
-                    </button>
-                </form>
-            @endauth
+            <a href="#" id="nav-profil" class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
+                              bg-white/5 hover:bg-white/20 transition-all 
+                              backdrop-blur-sm border border-white/10">
+                <span class="text-lg sm:text-xl drop-shadow-sm">👤</span>
+                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Profil</span>
+            </a>
+            <button type="button" id="nav-logout" title="Keluar dari akun / kembali ke beranda"
+                    class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
+                           bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all 
+                           backdrop-blur-sm border border-white/10 cursor-pointer">
+                <span class="text-base sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
+                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
+            </button>
         </div>
 
         <!-- Game Title — tepat di tengah layar -->
@@ -113,23 +108,13 @@
             Trilogi Nusantara
         </h1>
 
-        <!-- Right side: Leaderboard atau Login message -->
-        @guest
-            <a href="{{ route('login') }}" class="group flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-2xl shrink-0 relative z-10
-                              bg-white/5 hover:bg-white/20 transition-all 
-                              backdrop-blur-sm border border-white/10">
-                <span class="text-base drop-shadow">🔐</span>
-                <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Login untuk menyimpan skor dan progres</span>
-            </a>
-        @endguest
-        @auth
-            <a href="#" id="nav-leaderboard" class="group flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-2xl shrink-0 relative z-10
-                              bg-white/5 hover:bg-white/20 transition-all 
-                              backdrop-blur-sm border border-white/10">
-                <span class="text-base drop-shadow">🏆</span>
-                <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
-            </a>
-        @endauth
+        <!-- Leaderboard -->
+        <a href="#" id="nav-leaderboard" class="group flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-2xl shrink-0 relative z-10
+                          bg-white/5 hover:bg-white/20 transition-all 
+                          backdrop-blur-sm border border-white/10">
+            <span class="text-base drop-shadow">🏆</span>
+            <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
+        </a>
     </nav>
 
     <!-- MAIN CONTENT — flex, no scroll on desktop -->

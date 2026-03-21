@@ -117,16 +117,11 @@
                 <span class="text-sm sm:text-base" aria-hidden="true">🗺</span>
                 <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Peta</span>
             </a>
-            @auth
-                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                    @csrf
-                    <button type="submit" title="Keluar"
-                            class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
-                        <span class="text-base sm:text-lg" aria-hidden="true">🚪</span>
-                        <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
-                    </button>
-                </form>
-            @endauth
+            <button type="button" id="nav-logout" title="Keluar"
+                    class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
+                <span class="text-base sm:text-lg" aria-hidden="true">🚪</span>
+                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
+            </button>
         </div>
 
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
@@ -136,17 +131,7 @@
             Trilogi Nusantara
         </h1>
 
-        @guest
-            <a href="{{ route('login') }}" class="group flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-2xl shrink-0 relative z-10
-                              bg-white/5 hover:bg-white/20 transition-all 
-                              backdrop-blur-sm border border-white/10">
-                <span class="text-base drop-shadow">🔐</span>
-                <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Login untuk menyimpan skor dan progres</span>
-            </a>
-        @endguest
-        @auth
-            <div class="w-10 sm:w-16 md:w-24 shrink-0 relative z-10" aria-hidden="true"></div>
-        @endauth
+        <div class="w-10 sm:w-16 md:w-24 shrink-0 relative z-10" aria-hidden="true"></div>
     </nav>
 
     <main class="flex-1 flex flex-col px-4 sm:px-6 py-4 sm:py-6 min-h-0 overflow-y-auto">
