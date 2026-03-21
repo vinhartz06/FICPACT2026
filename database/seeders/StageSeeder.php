@@ -10,6 +10,10 @@ use Illuminate\Database\Seeder;
 /**
  * Semua stage konten (saat ini Jawa Tengah 1–5).
  * Pin map: persen relatif ke gambar pulau (jawa.png).
+ *
+ * Setelah mengubah isi seeder ini, jalankan:
+ *   php artisan db:seed --class=StageSeeder
+ * agar database ikut berubah (bukan otomatis saat save file).
  */
 class StageSeeder extends Seeder
 {
@@ -39,14 +43,15 @@ class StageSeeder extends Seeder
                 ['stage_id' => $stage->id, 'name' => $topicName]
             );
 
+            // Hapus kartu lama lalu isi ulang = edit seeder + seed → DB selaras (firstOrCreate tidak pernah update baris lama).
+            $topic->cards()->delete();
+
             foreach ($cards as $card) {
-                Card::firstOrCreate(
-                    [
-                        'topic_id' => $topic->id,
-                        'type' => $card['type'],
-                        'content' => $card['content'],
-                    ]
-                );
+                Card::query()->create([
+                    'topic_id' => $topic->id,
+                    'type' => $card['type'],
+                    'content' => $card['content'],
+                ]);
             }
         }
     }
@@ -243,7 +248,7 @@ class StageSeeder extends Seeder
                     'Trilogi Wisata Bahari (Karimunjawa)' => [
                         ['type' => 'image', 'content' => 'jepara-karimunjawa.jpg'],
                         ['type' => 'text', 'content' => 'Kepulauan Karimunjawa'],
-                        ['type' => 'text', 'content' => 'Taman Nasional Laut'],
+                        ['type' => 'text', 'content' => 'Pulau Laut Indah'],
                     ],
                     'Trilogi Benteng Bersejarah (Benteng Portugis)' => [
                         ['type' => 'image', 'content' => 'jepara-benteng-portugis.jpg'],
@@ -256,7 +261,7 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Sup Ikan Laut'],
                     ],
                     'Trilogi Ikon Pariwisata (Kura-Kura Ocean Park)' => [
-                        ['type' => 'image', 'content' => 'jepara-kura-kura-ocean-park.jpg'],
+                        ['type' => 'image', 'content' => 'jepara-park.jpg'],
                         ['type' => 'text', 'content' => 'Pantai Kartini'],
                         ['type' => 'text', 'content' => 'Kura-kura Ocean Park'],
                     ],
