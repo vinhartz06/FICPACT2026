@@ -262,6 +262,126 @@ class StageSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+                'stage_number' => 6,
+                'name' => 'Stage 6 - Medan',
+                'city_name' => 'Medan',
+                'region' => 'Sumatera',
+                'map_pin_x' => 50,
+                'map_pin_y' => 15,
+                'trilogies' => [
+                    'Landmark & Sejarah (Istana Maimun)' => [
+                        ['type' => 'image', 'content' => 'istana-maimun.jpeg'],
+                        ['type' => 'text', 'content' => 'Istana Maimun'],
+                        ['type' => 'text', 'content' => 'Kesultanan Deli'],
+                    ],
+                    'Monumen Agama (Masjid Raya)' => [
+                        ['type' => 'image', 'content' => 'masjid-raya-medan.jpg'],
+                        ['type' => 'text', 'content' => 'Masjid Raya'],
+                        ['type' => 'text', 'content' => 'Arsitektur Megah'],
+                    ],
+                    'Kuliner Manis (Bika Ambon)' => [
+                        ['type' => 'image', 'content' => 'bika-ambon.jpg'],
+                        ['type' => 'text', 'content' => 'Bika Ambon'],
+                        ['type' => 'text', 'content' => 'Kue Berongga'],
+                    ],
+                    'Kuliner Berkuah (Soto Medan)' => [
+                        ['type' => 'image', 'content' => 'soto-medan.jpg'],
+                        ['type' => 'text', 'content' => 'Soto Medan'],
+                        ['type' => 'text', 'content' => 'Kuah Santan'],
+                    ],
+                    'Danau Vulkanik (Danau Toba)' => [
+                        ['type' => 'image', 'content' => 'danau-toba.jpg'],
+                        ['type' => 'text', 'content' => 'Danau Toba'],
+                        ['type' => 'text', 'content' => 'Danau Vulkanik'],
+                    ],
+                    'Pulau Tengah Danau (Samosir)' => [
+                        ['type' => 'image', 'content' => 'pulau-samosir.jpg'],
+                        ['type' => 'text', 'content' => 'Samosir'],
+                        ['type' => 'text', 'content' => 'Pulau Tengah Danau'],
+                    ],
+                    'Sejarah Tionghoa (Tjong A Fie)' => [
+                        ['type' => 'image', 'content' => 'tjong-a-fie.jpg'],
+                        ['type' => 'text', 'content' => 'Tjong A Fie'],
+                        ['type' => 'text', 'content' => 'Sejarah Tionghoa'],
+                    ],
+                    'Pusat Kuliner (Merdeka Walk)' => [
+                        ['type' => 'image', 'content' => 'merdeka-walk.jpg'],
+                        ['type' => 'text', 'content' => 'Merdeka Walk'],
+                        ['type' => 'text', 'content' => 'Pusat Kuliner'],
+                    ],
+                    'Galeri Satwa (Rahmat Gallery)' => [
+                        ['type' => 'image', 'content' => 'rahmat-gallery.jpeg'],
+                        ['type' => 'text', 'content' => 'Rahmat Gallery'],
+                        ['type' => 'text', 'content' => 'Galeri Satwa'],
+                    ],
+                    'Buah Ikonik (Durian)' => [
+                        ['type' => 'image', 'content' => 'durian-medan.jpg'],
+                        ['type' => 'text', 'content' => 'Durian'],
+                        ['type' => 'text', 'content' => 'Buah Ikonik, Aroma Tajam'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 7,
+                'name' => 'Stage 7 - Palembang',
+                'city_name' => 'Palembang',
+                'region' => 'Sumatera',
+                'map_pin_x' => 50,
+                'map_pin_y' => 85,
+                'trilogies' => [
+                    'Gerbang Musi (Ampera)' => [
+                        ['type' => 'image', 'content' => 'jembatan-ampera.png'],
+                        ['type' => 'text', 'content' => 'Ampera'],
+                        ['type' => 'text', 'content' => 'Gerbang Musi'],
+                    ],
+                    'Kuliner Ikan (Pempek)' => [
+                        ['type' => 'image', 'content' => 'pempek.jpg'],
+                        ['type' => 'text', 'content' => 'Pempek'],
+                        ['type' => 'text', 'content' => 'Kuah Cuko'],
+                    ],
+                    'Sungai Besar (Musi)' => [
+                        ['type' => 'image', 'content' => 'sungai-musi.jpg'],
+                        ['type' => 'text', 'content' => 'Musi'],
+                        ['type' => 'text', 'content' => 'Sungai Besar'],
+                    ],
+                    'Benteng Bersejarah (Kuto Besak)' => [
+                        ['type' => 'image', 'content' => 'kuto-besak.jpg'],
+                        ['type' => 'text', 'content' => 'Benteng'],
+                        ['type' => 'text', 'content' => 'Benteng Bersejarah'],
+                    ],
+                    'Kuliner Udang (Tekwan)' => [
+                        ['type' => 'image', 'content' => 'tekwan.jpg'],
+                        ['type' => 'text', 'content' => 'Tekwan'],
+                        ['type' => 'text', 'content' => 'Kuah Udang'],
+                    ],
+                    'Legenda Cinta (Pulau Kemaro)' => [
+                        ['type' => 'image', 'content' => 'pulau-kemaro.jpg'],
+                        ['type' => 'text', 'content' => 'Kemaro'],
+                        ['type' => 'text', 'content' => 'Legenda Cinta'],
+                    ],
+                    'Religi (Masjid Agung)' => [
+                        ['type' => 'image', 'content' => 'masjid-agung-palembang.jpg'],
+                        ['type' => 'text', 'content' => 'Masjid Agung'],
+                        ['type' => 'text', 'content' => 'Religi'],
+                    ],
+                    'Kompleks Olahraga (Jakabaring)' => [
+                        ['type' => 'image', 'content' => 'jakabaring.jpg'],
+                        ['type' => 'text', 'content' => 'Jakabaring'],
+                        ['type' => 'text', 'content' => 'Kompleks Olahraga'],
+                    ],
+                    'Ikan Kuah (Model)' => [
+                        ['type' => 'image', 'content' => 'model.jpg'],
+                        ['type' => 'text', 'content' => 'Model'],
+                        ['type' => 'text', 'content' => 'Ikan Kuah'],
+                    ],
+                    'Ikan Asam Pedas (Pindang Patin)' => [
+                        ['type' => 'image', 'content' => 'pidang-patin.jpg'],
+                        ['type' => 'text', 'content' => 'Pindang'],
+                        ['type' => 'text', 'content' => 'Ikan Asam Pedas'],
+                    ],
+                ],
+            ],
         ];
     }
 }
