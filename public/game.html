@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Trilogi Nusantara - Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Tanpa <base>, URL seperti .../index.php/game.html membuat "css/game.css"
+    jadi .../index.php/css/game.css (404) → tidak ada style, modal .hidden tidak jalan.
+  -->
+  <script>
+    (function () {
+      var path = location.pathname || '';
+      var base = '/';
+      var idx = path.indexOf('/public/');
+      if (idx !== -1) {
+        base = path.substring(0, idx + '/public'.length) + '/';
+      } else if (/game\.html/i.test(path)) {
+        base = path.replace(/\/?[^/]*game\.html.*$/i, '/') || '/';
+      }
+      var b = document.createElement('base');
+      b.href = base;
+      document.head.insertBefore(b, document.head.firstChild);
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/game.css?v=maptheme1">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Trilogi Nusantara</h1>
+      <p id="stage-info">Stage 1 - Semarang - Grid 4x3</p>
+      <div class="status">
+        <span id="timer">Timer: 60</span>
+        <span id="score">Score: 0</span>
+      </div>
+    </header>
+
+    <section id="game-board" class="grid"></section>
+
+    <section class="controls">
+      <button id="start-btn" class="btn btn-primary">Mulai Game</button>
+      <p id="message"></p>
+    </section>
+
+    <section id="completion-modal" class="modal hidden">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <h2 id="modal-title">Stage Selesai!</h2>
+        <p id="modal-score">Skor: 0</p>
+        <div class="modal-buttons">
+          <button id="btn-back-map" class="btn btn-secondary">Kembali ke Pilih Pulau</button>
+          <button id="btn-next-stage" class="btn btn-primary">Lanjut Stage Berikutnya</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var p = window.location.pathname || '';
+      var idx = p.indexOf('/public/');
+      if (idx !== -1) {
+        window.TRILOGI_DASHBOARD_URL = p.substring(0, idx + '/public'.length) + '/game';
+        return;
+      }
+      var m = p.match(/^(.*\/)game\.html$/i);
+      if (m) window.TRILOGI_DASHBOARD_URL = m[1] + 'game';
+    })();
+  </script>
+  <script src="js/auth.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
+
