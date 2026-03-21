@@ -96,13 +96,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* Primary: resolved by Blade -> /images/indonesia.jpg
-               Fallback: works even if this file is opened directly (not through Laravel router). */
-            background-image: url('{{ asset("images/indonesia.jpg") }}'), url('../../images/indonesia.jpg');
+            /* Foto: taruh di public/images/indonesia.jpg — overlay gelap supaya teks hero tetap jelas. */
+            background-image:
+                linear-gradient(180deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 46, 0.5) 50%, rgba(10, 14, 39, 0.55) 100%),
+                url('{{ asset("images/indonesia.jpg") }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.2;
+            opacity: 1;
             z-index: 1;
         }
 
