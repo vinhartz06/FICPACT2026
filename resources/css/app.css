@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* Agar utility ter-generate untuk class di Blade & string JS */
+@source "../views/**/*.blade.php";
+@source "../../public/js/**/*.js";

@@ -8,7 +8,7 @@ use App\Models\Topic;
 use Illuminate\Database\Seeder;
 
 /**
- * Semua stage konten (saat ini Jawa Tengah 1–5).
+ * Semua stage konten (Jawa 1–9, Kalimantan 10–14).
  * Pin map: persen relatif ke gambar pulau (jawa.png).
  *
  * Setelah mengubah isi seeder ini, jalankan:
@@ -67,8 +67,9 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 1 - Semarang',
                 'city_name' => 'Semarang',
                 'region' => 'Jawa Tengah',
-                'map_pin_x' => 50.5,
-                'map_pin_y' => 46,
+                /* Pantai utara — geser ke bawah (y↑) supaya di daratan, bukan di laut */
+                'map_pin_x' => 53,
+                'map_pin_y' => 47,
                 'trilogies' => [
                     'Landmark & Sejarah (Lawang Sewu)' => [
                         ['type' => 'image', 'content' => 'lawang-sewu.jpg'],
@@ -107,8 +108,9 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 2 - Solo',
                 'city_name' => 'Solo',
                 'region' => 'Jawa Tengah',
-                'map_pin_x' => 51.5,
-                'map_pin_y' => 51,
+                /* Timur Magelang & Yogya — bukan utara Semarang */
+                'map_pin_x' => 56.5,
+                'map_pin_y' => 57,
                 'trilogies' => [
                     'Trilogi Pusat Kebudayaan (Keraton Surakarta)' => [
                         ['type' => 'image', 'content' => 'solo-keraton-surakarta.jpg'],
@@ -152,8 +154,9 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 3 - Magelang',
                 'city_name' => 'Magelang',
                 'region' => 'Jawa Tengah',
-                'map_pin_x' => 47,
-                'map_pin_y' => 56,
+                /* Selatan Semarang — antara Semarang–Solo */
+                'map_pin_x' => 51,
+                'map_pin_y' => 59,
                 'trilogies' => [
                     'Trilogi Keajaiban Dunia (Borobudur)' => [
                         ['type' => 'image', 'content' => 'magelang-borobudur.jpg'],
@@ -192,8 +195,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 4 - Kudus',
                 'city_name' => 'Kudus',
                 'region' => 'Jawa Tengah',
-                'map_pin_x' => 54,
-                'map_pin_y' => 42,
+                'map_pin_x' => 57.2,
+                'map_pin_y' => 44.8,
                 'trilogies' => [
                     'Trilogi Akulturasi Arsitektur (Menara Kudus)' => [
                         ['type' => 'image', 'content' => 'kudus-menara.jpg'],
@@ -232,8 +235,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 5 - Jepara',
                 'city_name' => 'Jepara',
                 'region' => 'Jawa Tengah',
-                'map_pin_x' => 59,
-                'map_pin_y' => 41,
+                'map_pin_x' => 56,
+                'map_pin_y' => 40,
                 'trilogies' => [
                     'Trilogi Pahlawan Emansipasi (R.A. Kartini)' => [
                         ['type' => 'image', 'content' => 'jepara-kartini.jpg'],
@@ -271,9 +274,9 @@ class StageSeeder extends Seeder
                 'stage_number' => 6,
                 'name' => 'Stage 6 - Medan',
                 'city_name' => 'Medan',
-                'region' => 'Sumatera Utara',
-                'map_pin_x' => 50,
-                'map_pin_y' => 15,
+                'region' => 'Sumatera',
+                'map_pin_x' => 39,
+                'map_pin_y' => 25,
                 'trilogies' => [
                     'Landmark & Sejarah (Istana Maimun)' => [
                         ['type' => 'image', 'content' => 'istana-maimun.jpeg'],
@@ -301,7 +304,7 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Danau Vulkanik'],
                     ],
                     'Pulau Tengah Danau (Samosir)' => [
-                        ['type' => 'image', 'content' => 'pulau-samosir.jpg'],
+                        ['type' => 'image', 'content' => 'pulau-samosir.jpeg'],
                         ['type' => 'text', 'content' => 'Samosir'],
                         ['type' => 'text', 'content' => 'Pulau Tengah Danau'],
                     ],
@@ -331,9 +334,9 @@ class StageSeeder extends Seeder
                 'stage_number' => 7,
                 'name' => 'Stage 7 - Palembang',
                 'city_name' => 'Palembang',
-                'region' => 'Sumatera Selatan',
-                'map_pin_x' => 50,
-                'map_pin_y' => 85,
+                'region' => 'Sumatera',
+                'map_pin_x' => 65,
+                'map_pin_y' => 71,
                 'trilogies' => [
                     'Gerbang Musi (Ampera)' => [
                         ['type' => 'image', 'content' => 'jembatan-ampera.png'],
@@ -381,9 +384,373 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Ikan Kuah'],
                     ],
                     'Ikan Asam Pedas (Pindang Patin)' => [
-                        ['type' => 'image', 'content' => 'pidang-patin.jpg'],
+                        ['type' => 'image', 'content' => 'pindang-patin.jpg'],
                         ['type' => 'text', 'content' => 'Pindang'],
                         ['type' => 'text', 'content' => 'Ikan Asam Pedas'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 8,
+                'name' => 'Stage 8 - Yogyakarta',
+                'city_name' => 'Yogyakarta',
+                'region' => 'DI Yogyakarta',
+                /* Barat daya Solo (bukan tegak selatan) */
+                'map_pin_x' => 53,
+                'map_pin_y' => 64.5,
+                'trilogies' => [
+                    'Trilogi Pusat Kesultanan (Keraton Ngayogyakarta)' => [
+                        ['type' => 'image', 'content' => 'jogja-keraton.jpg'],
+                        ['type' => 'text', 'content' => 'Keraton Ngayogyakarta'],
+                        ['type' => 'text', 'content' => 'Sri Sultan Hamengkubuwono'],
+                    ],
+                    'Trilogi Jantung Kota (Malioboro)' => [
+                        ['type' => 'image', 'content' => 'jogja-malioboro.jpg'],
+                        ['type' => 'text', 'content' => 'Jalan Malioboro'],
+                        ['type' => 'text', 'content' => 'Sumbu Filosofis Jogja'],
+                    ],
+                    'Trilogi Legenda Candi (Prambanan)' => [
+                        ['type' => 'image', 'content' => 'jogja-prambanan.jpg'],
+                        ['type' => 'text', 'content' => 'Candi Prambanan'],
+                        ['type' => 'text', 'content' => 'Legenda Roro Jonggrang'],
+                    ],
+                    'Trilogi Kuliner Ikonik (Gudeg)' => [
+                        ['type' => 'image', 'content' => 'jogja-gudeg.jpg'],
+                        ['type' => 'text', 'content' => 'Gudeg Jogja'],
+                        ['type' => 'text', 'content' => 'Olahan Nangka Muda'],
+                    ],
+                    'Trilogi Arsitektur Kerajaan (Taman Sari)' => [
+                        ['type' => 'image', 'content' => 'jogja-taman-sari.jpg'],
+                        ['type' => 'text', 'content' => 'Taman Sari'],
+                        ['type' => 'text', 'content' => 'Istana Air Kerajaan'],
+                    ],
+                    'Trilogi Landmark Bersejarah (Tugu Pal Putih)' => [
+                        ['type' => 'image', 'content' => 'jogja-tugu.jpg'],
+                        ['type' => 'text', 'content' => 'Tugu Pal Putih'],
+                        ['type' => 'text', 'content' => 'Ikon Kota Pelajar'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 9,
+                'name' => 'Stage 9 - Jakarta',
+                'city_name' => 'Jakarta',
+                'region' => 'DKI Jakarta',
+                /* Ujung barat daya Jabodetabek — lebih ke kiri (x↓) */
+                'map_pin_x' => 23,
+                'map_pin_y' => 35,
+                'trilogies' => [
+                    'Trilogi Monumen Ibu Kota (Monas)' => [
+                        ['type' => 'image', 'content' => 'jakarta-monas.jpg'],
+                        ['type' => 'text', 'content' => 'Monumen Nasional'],
+                        ['type' => 'text', 'content' => 'Puncak Emas 38 Kg'],
+                    ],
+                    'Trilogi Kota Tua (Museum Fatahillah)' => [
+                        ['type' => 'image', 'content' => 'jakarta-museum-fatahillah.jpg'],
+                        ['type' => 'text', 'content' => 'Museum Fatahillah'],
+                        ['type' => 'text', 'content' => 'Sejarah Batavia'],
+                    ],
+                    'Trilogi Ikon Budaya (Ondel-Ondel)' => [
+                        ['type' => 'image', 'content' => 'jakarta-ondel-ondel.jpg'],
+                        ['type' => 'text', 'content' => 'Ondel-Ondel'],
+                        ['type' => 'text', 'content' => 'Boneka Raksasa Betawi'],
+                    ],
+                    'Trilogi Kuliner Asli (Kerak Telor)' => [
+                        ['type' => 'image', 'content' => 'jakarta-kerak-telor.jpg'],
+                        ['type' => 'text', 'content' => 'Kerak Telor'],
+                        ['type' => 'text', 'content' => 'Beras Ketan & Telur Bebek'],
+                    ],
+                    'Trilogi Pelabuhan Bersejarah (Sunda Kelapa)' => [
+                        ['type' => 'image', 'content' => 'jakarta-sunda-kelapa.jpg'],
+                        ['type' => 'text', 'content' => 'Pelabuhan Sunda Kelapa'],
+                        ['type' => 'text', 'content' => 'Kapal Kayu Pinisi'],
+                    ],
+                    'Trilogi Simbol Toleransi (Masjid Istiqlal)' => [
+                        ['type' => 'image', 'content' => 'jakarta-istiqlal.jpg'],
+                        ['type' => 'text', 'content' => 'Masjid Istiqlal'],
+                        ['type' => 'text', 'content' => 'Masjid Terbesar Asia Tenggara'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 10,
+                'name' => 'Stage 10 - Bandung',
+                'city_name' => 'Bandung',
+                'region' => 'Jawa Barat',
+                /* Priangan — tenggara Jakarta */
+                'map_pin_x' => 30.3,
+                'map_pin_y' => 47,
+                'trilogies' => [
+                    'Trilogi Landmark Jabar (Gedung Sate)' => [
+                        ['type' => 'image', 'content' => 'bandung-gedung-sate.jpg'],
+                        ['type' => 'text', 'content' => 'Gedung Sate'],
+                        ['type' => 'text', 'content' => 'Ornamen Tusuk Sate'],
+                    ],
+                    'Trilogi Sejarah Diplomasi (Gedung Merdeka)' => [
+                        ['type' => 'image', 'content' => 'bandung-gedung-merdeka.jpg'],
+                        ['type' => 'text', 'content' => 'Gedung Merdeka'],
+                        ['type' => 'text', 'content' => 'Konferensi Asia Afrika'],
+                    ],
+                    'Trilogi Legenda Alam (Tangkuban Perahu)' => [
+                        ['type' => 'image', 'content' => 'bandung-tangkuban-perahu.jpg'],
+                        ['type' => 'text', 'content' => 'Tangkuban Perahu'],
+                        ['type' => 'text', 'content' => 'Legenda Sangkuriang'],
+                    ],
+                    'Trilogi Kesenian Sunda (Angklung)' => [
+                        ['type' => 'image', 'content' => 'bandung-angklung.jpg'],
+                        ['type' => 'text', 'content' => 'Saung Angklung Udjo'],
+                        ['type' => 'text', 'content' => 'Alat Musik Bambu'],
+                    ],
+                    'Trilogi Kuliner Jalanan (Batagor)' => [
+                        ['type' => 'image', 'content' => 'bandung-batagor.jpg'],
+                        ['type' => 'text', 'content' => 'Batagor Bandung'],
+                        ['type' => 'text', 'content' => 'Bakso Tahu Goreng'],
+                    ],
+                    'Trilogi Monumen Perjuangan (Bandung Lautan Api)' => [
+                        ['type' => 'image', 'content' => 'bandung-monumen-bla.jpg'],
+                        ['type' => 'text', 'content' => 'Monumen BLA'],
+                        ['type' => 'text', 'content' => 'Halo-Halo Bandung'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 11,
+                'name' => 'Stage 11 - Surabaya',
+                'city_name' => 'Surabaya',
+                'region' => 'Jawa Timur',
+                /* Pantai utara Jatim — sama: y cukup besar biar di daratan */
+                'map_pin_x' => 72,
+                'map_pin_y' => 52,
+                'trilogies' => [
+                    'Trilogi Simbol Kota (Sura & Baya)' => [
+                        ['type' => 'image', 'content' => 'surabaya-sura-baya.jpg'],
+                        ['type' => 'text', 'content' => 'Patung Sura dan Baya'],
+                        ['type' => 'text', 'content' => 'Ikon Kota Surabaya'],
+                    ],
+                    'Trilogi Monumen Perjuangan (Tugu Pahlawan)' => [
+                        ['type' => 'image', 'content' => 'surabaya-tugu-pahlawan.jpg'],
+                        ['type' => 'text', 'content' => 'Tugu Pahlawan'],
+                        ['type' => 'text', 'content' => 'Pertempuran 10 November'],
+                    ],
+                    'Trilogi Infrastruktur Megah (Jembatan Suramadu)' => [
+                        ['type' => 'image', 'content' => 'surabaya-suramadu.jpg'],
+                        ['type' => 'text', 'content' => 'Jembatan Suramadu'],
+                        ['type' => 'text', 'content' => 'Penghubung Jawa-Madura'],
+                    ],
+                    'Trilogi Wisata Maritim (Monumen Kapal Selam)' => [
+                        ['type' => 'image', 'content' => 'surabaya-monkasel.jpg'],
+                        ['type' => 'text', 'content' => 'Monkasel'],
+                        ['type' => 'text', 'content' => 'KRI Pasopati 410'],
+                    ],
+                    'Trilogi Kuliner Kuah Gelap (Rawon)' => [
+                        ['type' => 'image', 'content' => 'surabaya-rawon.jpg'],
+                        ['type' => 'text', 'content' => 'Nasi Rawon'],
+                        ['type' => 'text', 'content' => 'Kuah Hitam Kluwek'],
+                    ],
+                    'Trilogi Kuliner Ekstrem/Unik (Rujak Cingur)' => [
+                        ['type' => 'image', 'content' => 'surabaya-rujak-cingur.jpg'],
+                        ['type' => 'text', 'content' => 'Rujak Cingur'],
+                        ['type' => 'text', 'content' => 'Olahan Moncong Sapi'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 12,
+                'name' => 'Stage 12 - Pontianak',
+                'city_name' => 'Pontianak',
+                'region' => 'Kalimantan Barat',
+                'map_pin_x' => 36.5,
+                'map_pin_y' => 61.5,
+                'trilogies' => [
+                    'Trilogi Geografi Dunia (Tugu Khatulistiwa)' => [
+                        ['type' => 'image', 'content' => 'pontianak-tugu-khatulistiwa.jpg'],
+                        ['type' => 'text', 'content' => 'Tugu Khatulistiwa'],
+                        ['type' => 'text', 'content' => 'Garis Lintang Nol Derajat'],
+                    ],
+                    'Trilogi Urat Nadi Kota (Sungai Kapuas)' => [
+                        ['type' => 'image', 'content' => 'pontianak-sungai-kapuas.jpg'],
+                        ['type' => 'text', 'content' => 'Sungai Kapuas'],
+                        ['type' => 'text', 'content' => 'Sungai Terpanjang Indonesia'],
+                    ],
+                    'Trilogi Minuman Khas (Lidah Buaya)' => [
+                        ['type' => 'image', 'content' => 'pontianak-es-lidah-buaya.jpg'],
+                        ['type' => 'text', 'content' => 'Es Lidah Buaya'],
+                        ['type' => 'text', 'content' => 'Tanaman Aloe Vera'],
+                    ],
+                    'Trilogi Kuliner Peranakan (Choipan)' => [
+                        ['type' => 'image', 'content' => 'pontianak-choipan.jpg'],
+                        ['type' => 'text', 'content' => 'Kue Choi Pan'],
+                        ['type' => 'text', 'content' => 'Kukusan Tepung Beras'],
+                    ],
+                    'Trilogi Budaya Nongkrong (Kopi Asiang)' => [
+                        ['type' => 'image', 'content' => 'pontianak-kopi-asiang.jpg'],
+                        ['type' => 'text', 'content' => 'Kopi Tiam Pontianak'],
+                        ['type' => 'text', 'content' => 'Budaya Kopi Tarik'],
+                    ],
+                    'Trilogi Pusat Kesultanan (Istana Kadriah)' => [
+                        ['type' => 'image', 'content' => 'pontianak-istana-kadriah.jpg'],
+                        ['type' => 'text', 'content' => 'Istana Kadriah'],
+                        ['type' => 'text', 'content' => 'Kesultanan Pontianak'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 13,
+                'name' => 'Stage 13 - Banjarmasin',
+                'city_name' => 'Banjarmasin',
+                'region' => 'Kalimantan Selatan',
+                'map_pin_x' => 54.7,
+                'map_pin_y' => 86,
+                'trilogies' => [
+                    'Trilogi Budaya Ekonomi (Pasar Terapung)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-pasar-terapung.jpg'],
+                        ['type' => 'text', 'content' => 'Pasar Terapung'],
+                        ['type' => 'text', 'content' => 'Transaksi di Atas Perahu'],
+                    ],
+                    'Trilogi Satwa Endemik (Bekantan)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-bekantan.jpg'],
+                        ['type' => 'text', 'content' => 'Bekantan'],
+                        ['type' => 'text', 'content' => 'Monyet Hidung Panjang'],
+                    ],
+                    'Trilogi Kuliner Kuah (Soto Banjar)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-soto-banjar.jpg'],
+                        ['type' => 'text', 'content' => 'Soto Banjar'],
+                        ['type' => 'text', 'content' => 'Kuah Rempah Susu & Ketupat'],
+                    ],
+                    'Trilogi Kain Tradisional (Sasirangan)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-sasirangan.jpg'],
+                        ['type' => 'text', 'content' => 'Kain Sasirangan'],
+                        ['type' => 'text', 'content' => 'Batik Khas Suku Banjar'],
+                    ],
+                    'Trilogi Arsitektur Adat (Bubungan Tinggi)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-bubungan-tinggi.jpg'],
+                        ['type' => 'text', 'content' => 'Bubungan Tinggi'],
+                        ['type' => 'text', 'content' => 'Rumah Adat Banjar'],
+                    ],
+                    'Trilogi Ikon Religi (Masjid Sabilal Muhtadin)' => [
+                        ['type' => 'image', 'content' => 'banjarmasin-sabilal-muhtadin.jpg'],
+                        ['type' => 'text', 'content' => 'Sabilal Muhtadin'],
+                        ['type' => 'text', 'content' => 'Masjid Raya Banjarmasin'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 14,
+                'name' => 'Stage 14 - Balikpapan',
+                'city_name' => 'Balikpapan',
+                'region' => 'Kalimantan Timur',
+                'map_pin_x' => 62.7,
+                'map_pin_y' => 70,
+                'trilogies' => [
+                    'Trilogi Sejarah Industri (Sumur Mathilda)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-sumur-mathilda.jpg'],
+                        ['type' => 'text', 'content' => 'Sumur Minyak Mathilda'],
+                        ['type' => 'text', 'content' => 'Sejarah Kota Minyak'],
+                    ],
+                    'Trilogi Maskot Kota (Beruang Madu)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-beruang-madu.jpg'],
+                        ['type' => 'text', 'content' => 'Beruang Madu'],
+                        ['type' => 'text', 'content' => 'Maskot Kota Balikpapan'],
+                    ],
+                    'Trilogi Makanan Laut (Abon Kepiting)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-abon-kepiting.jpg'],
+                        ['type' => 'text', 'content' => 'Abon Kepiting'],
+                        ['type' => 'text', 'content' => 'Oleh-Oleh Khas Pesisir'],
+                    ],
+                    'Trilogi Hutan Lindung (Bukit Bangkirai)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-bukit-bangkirai.jpg'],
+                        ['type' => 'text', 'content' => 'Bukit Bangkirai'],
+                        ['type' => 'text', 'content' => 'Jembatan Tajuk Pohon'],
+                    ],
+                    'Trilogi Infrastruktur (Jembatan Pulau Balang)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-jembatan-balang.jpg'],
+                        ['type' => 'text', 'content' => 'Jembatan Pulau Balang'],
+                        ['type' => 'text', 'content' => 'Akses Darat Menuju IKN'],
+                    ],
+                    'Trilogi Wisata Tengah Kota (Pantai Melawai)' => [
+                        ['type' => 'image', 'content' => 'balikpapan-pantai-melawai.jpg'],
+                        ['type' => 'text', 'content' => 'Pantai Melawai'],
+                        ['type' => 'text', 'content' => 'Tempat Berburu Sunset'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 15,
+                'name' => 'Stage 15 - Samarinda',
+                'city_name' => 'Samarinda',
+                'region' => 'Kalimantan Timur',
+                'map_pin_x' => 63,
+                'map_pin_y' => 65,
+                'trilogies' => [
+                    'Trilogi Simbol Kota (Sungai Mahakam)' => [
+                        ['type' => 'image', 'content' => 'samarinda-sungai-mahakam.jpg'],
+                        ['type' => 'text', 'content' => 'Sungai Mahakam'],
+                        ['type' => 'text', 'content' => 'Urat Nadi Kalimantan Timur'],
+                    ],
+                    'Trilogi Satwa Air Raksasa (Pesut)' => [
+                        ['type' => 'image', 'content' => 'samarinda-pesut.jpg'],
+                        ['type' => 'text', 'content' => 'Pesut Mahakam'],
+                        ['type' => 'text', 'content' => 'Lumba-Lumba Air Tawar'],
+                    ],
+                    'Trilogi Jajanan Khas (Amplang)' => [
+                        ['type' => 'image', 'content' => 'samarinda-amplang.jpg'],
+                        ['type' => 'text', 'content' => 'Kerupuk Amplang'],
+                        ['type' => 'text', 'content' => 'Olahan Ikan Tenggiri'],
+                    ],
+                    'Trilogi Kerajinan Tangan (Sarung Samarinda)' => [
+                        ['type' => 'image', 'content' => 'samarinda-sarung.jpg'],
+                        ['type' => 'text', 'content' => 'Sarung Samarinda'],
+                        ['type' => 'text', 'content' => 'Tenun Alat Tradisional'],
+                    ],
+                    'Trilogi Ikon Religi (Islamic Center)' => [
+                        ['type' => 'image', 'content' => 'samarinda-islamic-center.jpg'],
+                        ['type' => 'text', 'content' => 'Islamic Center Samarinda'],
+                        ['type' => 'text', 'content' => 'Masjid Megah Tepian'],
+                    ],
+                    'Trilogi Budaya Lokal (Desa Pampang)' => [
+                        ['type' => 'image', 'content' => 'samarinda-desa-pampang.jpg'],
+                        ['type' => 'text', 'content' => 'Desa Budaya Pampang'],
+                        ['type' => 'text', 'content' => 'Suku Dayak Kenyah'],
+                    ],
+                ],
+            ],
+            [
+                'stage_number' => 16,
+                'name' => 'Stage 16 - Palangka Raya',
+                'city_name' => 'Palangka Raya',
+                'region' => 'Kalimantan Tengah',
+                'map_pin_x' => 52,
+                'map_pin_y' => 78,
+                'trilogies' => [
+                    'Trilogi Sejarah Pendirian (Tugu Soekarno)' => [
+                        ['type' => 'image', 'content' => 'palangka-tugu-soekarno.jpg'],
+                        ['type' => 'text', 'content' => 'Tugu Soekarno'],
+                        ['type' => 'text', 'content' => 'Tiang Pancang Kota Pertama'],
+                    ],
+                    'Trilogi Infrastruktur Megah (Jembatan Kahayan)' => [
+                        ['type' => 'image', 'content' => 'palangka-jembatan-kahayan.jpg'],
+                        ['type' => 'text', 'content' => 'Jembatan Kahayan'],
+                        ['type' => 'text', 'content' => 'Penghubung Suku Dayak'],
+                    ],
+                    'Trilogi Taman Nasional (Sebangau)' => [
+                        ['type' => 'image', 'content' => 'palangka-sebangau.jpg'],
+                        ['type' => 'text', 'content' => 'Taman Nasional Sebangau'],
+                        ['type' => 'text', 'content' => 'Habitat Orangutan'],
+                    ],
+                    'Trilogi Pusaka Tradisional (Mandau)' => [
+                        ['type' => 'image', 'content' => 'palangka-mandau.jpg'],
+                        ['type' => 'text', 'content' => 'Senjata Mandau'],
+                        ['type' => 'text', 'content' => 'Pusaka Suku Dayak'],
+                    ],
+                    'Trilogi Kuliner Ekstrem (Juhu Singkah)' => [
+                        ['type' => 'image', 'content' => 'palangka-juhu-singkah.jpg'],
+                        ['type' => 'text', 'content' => 'Juhu Singkah'],
+                        ['type' => 'text', 'content' => 'Sayur Umbut Rotan'],
+                    ],
+                    'Trilogi Transportasi Unik (Susur Sungai)' => [
+                        ['type' => 'image', 'content' => 'palangka-kelotok.jpg'],
+                        ['type' => 'text', 'content' => 'Perahu Kelotok'],
+                        ['type' => 'text', 'content' => 'Wisata Susur Sungai'],
                     ],
                 ],
             ],

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Pilih Stage · {{ $islandTitle }} · Trilogi Nusantara</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,800&display=swap" rel="stylesheet">
     <style>
         .island-map-stage {
@@ -170,7 +172,7 @@
                         /** @var \App\Models\Stage $s */
                         $s = $item['stage'];
                     @endphp
-                    <a href="{{ url('/game.html') }}?stage={{ $s->id }}"
+                    <a href="{{ url('/play') }}?stage={{ $s->id }}"
                        class="stage-pin stage-row"
                        data-pin-x="{{ $item['x'] }}"
                        data-pin-y="{{ $item['y'] }}"
@@ -192,7 +194,7 @@
                 <ul class="mt-2 space-y-2 max-w-lg mx-auto w-full pb-6 shrink-0" id="stage-list-fallback" aria-label="Daftar stage">
                     @foreach ($stages as $s)
                         <li>
-                            <a href="{{ url('/game.html') }}?stage={{ $s->id }}"
+                            <a href="{{ url('/play') }}?stage={{ $s->id }}"
                                class="stage-row flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-3 transition-all text-sm"
                                data-stage-number="{{ $s->stage_number }}"
                                data-stage-id="{{ $s->id }}">
