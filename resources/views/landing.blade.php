@@ -264,6 +264,19 @@
             box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
         }
 
+        .btn-masuk {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFD700;
+            border: 2px solid #D4A017;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-masuk:hover {
+            background: rgba(212, 160, 23, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -802,6 +815,7 @@
                 <a href="#" class="btn btn-secondary">Daftar</a> -->
                 {{-- Mainkan = tamu / lanjut (dicegat landing.js); bukan halaman login --}}
                 <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
+                <a href="{{ route('login') }}" class="btn btn-masuk">Masuk</a>
                 <a href="{{ route('register') }}" class="btn btn-secondary">Daftar</a>
             </div>
         </div>

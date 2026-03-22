@@ -20,7 +20,7 @@ class GameIslandController extends Controller
             'bali' => ['Bali', 'NTT', 'NTB'],
             'kalimantan' => ['Kalimantan', 'Kalimantan Barat', 'Kalimantan Tengah', 'Kalimantan Selatan', 'Kalimantan Timur', 'Kalimantan Utara'],
             'sulawesi' => ['Sulawesi', 'Sulawesi Utara', 'Sulawesi Selatan', 'Sulawesi Tengah', 'Sulawesi Tenggara', 'Sulawesi Barat', 'Gorontalo'],
-            'papua' => ['Papua', 'Papua Barat', 'Papua Selatan', 'Papua Pegunungan', 'Papua Tengah'],
+            'papua' => ['Papua', 'Papua Barat', 'Papua Selatan', 'Papua Pegunungan', 'Papua Tengah', 'Papua Barat Daya'],
         ];
 
         return $map[$island] ?? [];
