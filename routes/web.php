@@ -29,10 +29,9 @@ Route::get('/game/island/{island}', [GameIslandController::class, 'show'])
     ->where('island', '[a-z]+')
     ->name('game.island');
 
-Route::get('/game.html', function () {
-    $file = public_path('game.html');
-    if (!file_exists($file)) {
-        abort(404);
-    }
-    return response()->file($file);
-});
+Route::get('/play', function () {
+    return view('memory-game');
+})->name('play');
+
+// Bookmark / link lama ke game.html → /play
+Route::redirect('/game.html', '/play', 301);

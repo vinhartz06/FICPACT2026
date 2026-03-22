@@ -4,27 +4,10 @@
   <meta charset="UTF-8">
   <title>Trilogi Nusantara - Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-    Tanpa <base>, URL seperti .../index.php/game.html membuat "css/game.css"
-    jadi .../index.php/css/game.css (404) → tidak ada style, modal .hidden tidak jalan.
-  -->
-  <script>
-    (function () {
-      var path = location.pathname || '';
-      var base = '/';
-      var idx = path.indexOf('/public/');
-      if (idx !== -1) {
-        base = path.substring(0, idx + '/public'.length) + '/';
-      } else if (/game\.html/i.test(path)) {
-        base = path.replace(/\/?[^/]*game\.html.*$/i, '/') || '/';
-      }
-      var b = document.createElement('base');
-      b.href = base;
-      document.head.insertBefore(b, document.head.firstChild);
-    })();
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/game.css?v=maptheme1">
+  <link rel="stylesheet" href="{{ asset('css/game.css') }}?v=maptheme1">
 </head>
 <body>
   <main class="app">
@@ -58,19 +41,10 @@
   </main>
 
   <script>
-    (function () {
-      var p = window.location.pathname || '';
-      var idx = p.indexOf('/public/');
-      if (idx !== -1) {
-        window.TRILOGI_DASHBOARD_URL = p.substring(0, idx + '/public'.length) + '/game';
-        return;
-      }
-      var m = p.match(/^(.*\/)game\.html$/i);
-      if (m) window.TRILOGI_DASHBOARD_URL = m[1] + 'game';
-    })();
+    window.TRILOGI_DASHBOARD_URL = @json(url('/game'));
+    window.TRILOGI_PLAY_URL = @json(url('/play'));
   </script>
-  <script src="js/auth.js"></script>
-  <script src="js/game.js"></script>
+  <script src="{{ asset('js/auth.js') }}" defer></script>
+  <script src="{{ asset('js/game.js') }}" defer></script>
 </body>
 </html>
-

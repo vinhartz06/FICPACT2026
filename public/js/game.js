@@ -12,18 +12,30 @@ function authJsonHeaders() {
 var TRILOGIES_PER_ROUND = 4;
 var GRID_COLS = 4;
 
-/** URL dashboard Blade (Pilih Pulau). Relatif ke folder `public/` biar aman di /ssttt/public/ maupun artisan serve. */
+/** URL dashboard Blade (Pilih Pulau). */
 function getDashboardUrl() {
   if (typeof window.TRILOGI_DASHBOARD_URL === 'string' && window.TRILOGI_DASHBOARD_URL.length) {
     return window.TRILOGI_DASHBOARD_URL;
   }
   var path = window.location.pathname || '';
-  // /ssttt/public/game.html → /ssttt/public/game (lebih aman dari lastIndexOf saja)
-  var m = path.match(/^(.*\/)game\.html$/i);
-  if (m) return m[1] + 'game';
+  var mPlay = path.match(/^(.*\/)play\/?$/i);
+  if (mPlay) return mPlay[1] + 'game';
   var i = path.lastIndexOf('/');
   var dir = i >= 0 ? path.substring(0, i + 1) : '/';
   return dir + 'game';
+}
+
+/** URL halaman memory game (/play). */
+function getPlayUrl() {
+  if (typeof window.TRILOGI_PLAY_URL === 'string' && window.TRILOGI_PLAY_URL.length) {
+    return window.TRILOGI_PLAY_URL.replace(/\/?$/, '');
+  }
+  var path = window.location.pathname || '';
+  var m = path.match(/^(.*\/)play\/?$/i);
+  if (m) return m[1] + 'play';
+  var i = path.lastIndexOf('/');
+  var dir = i >= 0 ? path.substring(0, i + 1) : '/';
+  return dir + 'play';
 }
 
 var boardEl = document.getElementById('game-board');
@@ -345,7 +357,7 @@ btnNextStage.addEventListener('click', async function() {
       var stages = await loadStages();
       var nextStage = stages.find(function(s) { return s.id === parseInt(nextStageId); });
       if (nextStage) {
-        window.location.href = 'game.html?stage=' + nextStage.id;
+        window.location.href = getPlayUrl() + '?stage=' + nextStage.id;
       } else {
         alert('Stage berikutnya belum tersedia. Tunggu update selanjutnya!');
         window.location.href = getDashboardUrl();
