@@ -271,7 +271,7 @@ class StageSeeder extends Seeder
                 'stage_number' => 6,
                 'name' => 'Stage 6 - Medan',
                 'city_name' => 'Medan',
-                'region' => 'Sumatera',
+                'region' => 'Sumatera Utara',
                 'map_pin_x' => 50,
                 'map_pin_y' => 15,
                 'trilogies' => [
@@ -331,7 +331,7 @@ class StageSeeder extends Seeder
                 'stage_number' => 7,
                 'name' => 'Stage 7 - Palembang',
                 'city_name' => 'Palembang',
-                'region' => 'Sumatera',
+                'region' => 'Sumatera Selatan',
                 'map_pin_x' => 50,
                 'map_pin_y' => 85,
                 'trilogies' => [

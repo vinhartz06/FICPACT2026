@@ -15,7 +15,7 @@ class GameIslandController extends Controller
     private function regionsForIsland(string $island): array
     {
         $map = [
-            'sumatra' => ['Sumatera', 'Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Riau', 'Jambi', 'Sumatera Selatan', 'Bengkulu', 'Lampung'],
+            'sumatra' => ['Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Riau', 'Jambi', 'Sumatera Selatan', 'Bengkulu', 'Lampung'],
             'jawa' => ['Jawa Tengah', 'Jawa Barat', 'Jawa Timur', 'DI Yogyakarta', 'Banten', 'DKI Jakarta'],
             'bali' => ['Bali', 'NTT', 'NTB'],
             'kalimantan' => ['Kalimantan', 'Kalimantan Barat', 'Kalimantan Tengah', 'Kalimantan Selatan', 'Kalimantan Timur', 'Kalimantan Utara'],
