@@ -508,7 +508,7 @@ class StageSeeder extends Seeder
                     ],
                     'Benteng Bersejarah (Kuto Besak)' => [
                         ['type' => 'image', 'content' => 'kuto-besak.jpg'],
-                        ['type' => 'text', 'content' => 'Benteng'],
+                        ['type' => 'text', 'content' => 'Kuto Besak'],
                         ['type' => 'text', 'content' => 'Benteng Bersejarah'],
                     ],
                     'Kuliner Udang (Tekwan)' => [

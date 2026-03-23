@@ -71,50 +71,50 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
     </div>
 
-    <!-- NAVBAR — judul benar-benar di tengah viewport (absolute), sisi kiri/kanan z-10 -->
-    <nav class="relative shrink-0 w-full px-4 sm:px-6 py-3 flex items-center justify-between 
+    <!-- NAVBAR — responsive with mobile-optimized layout -->
+    <nav class="relative shrink-0 w-full px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between 
                 backdrop-blur-md bg-black/20 border-b border-white/10
-                transition-all duration-300 min-h-[3.25rem]">
+                transition-all duration-300 min-h-[3rem] sm:min-h-[3.25rem]">
         
-        <!-- Kembali ke landing + Profil + Keluar -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 relative z-10 max-w-[42%] sm:max-w-none">
+        <!-- Kembali ke landing + Profil + Keluar - responsive sizing -->
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0 relative z-10">
             <a href="{{ url('/') }}" title="Kembali ke halaman utama"
-               class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
+               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                       bg-white/5 hover:bg-white/20 transition-all 
                       backdrop-blur-sm border border-white/10">
-                <span class="text-lg sm:text-xl drop-shadow-sm" aria-hidden="true">🏠</span>
-                <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Beranda</span>
+                <span class="text-base sm:text-xl drop-shadow-sm" aria-hidden="true">🏠</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Beranda</span>
             </a>
-            <a href="#" id="nav-profil" class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
+            <a href="#" id="nav-profil" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                               bg-white/5 hover:bg-white/20 transition-all 
                               backdrop-blur-sm border border-white/10">
-                <span class="text-lg sm:text-xl drop-shadow-sm">👤</span>
-                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Profil</span>
+                <span class="text-base sm:text-xl drop-shadow-sm">👤</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Profil</span>
             </a>
             <button type="button" id="nav-logout" title="Keluar dari akun / kembali ke beranda"
-                    class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl 
+                    class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                            bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all 
                            backdrop-blur-sm border border-white/10 cursor-pointer">
-                <span class="text-base sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
-                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
+                <span class="text-sm sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Keluar</span>
             </button>
         </div>
 
-        <!-- Game Title — tepat di tengah layar -->
+        <!-- Game Title — hidden on mobile, visible on tablet/desktop -->
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                   text-center text-base sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
+                   hidden sm:block text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
                    max-w-[calc(100vw-9.5rem)] sm:max-w-[calc(100vw-12rem)] md:max-w-none leading-tight
                    bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A]
                    bg-clip-text text-transparent drop-shadow-md">
             Trilogi Nusantara
         </h1>
 
-        <!-- Leaderboard -->
-        <a href="#" id="nav-leaderboard" class="group flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-2xl shrink-0 relative z-10
+        <!-- Leaderboard - responsive sizing -->
+        <a href="#" id="nav-leaderboard" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shrink-0 relative z-10
                           bg-white/5 hover:bg-white/20 transition-all 
                           backdrop-blur-sm border border-white/10">
-            <span class="text-base drop-shadow">🏆</span>
-            <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
+            <span class="text-sm sm:text-base drop-shadow">🏆</span>
+            <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
         </a>
     </nav>
 

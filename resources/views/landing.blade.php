@@ -1128,12 +1128,8 @@
             </div>
             <div class="modal-body">
                 <div class="about-text">
-                    <strong>Trilogi Nusantara</strong> adalah permainan memori edukatif yang mengajak pemain untuk mengenal dan menjelajahi kekayaan budaya Indonesia melalui mekanik permainan kartu yang seru dan menantang.
-                    Dalam permainan ini, pemain dapat menemukan berbagai keunikan dari beragam pulau dan kota di Nusantara yang masing-masing memiliki budaya, sejarah, dan ciri khasnya sendiri.
-                    <br><br>
-                    Trilogi Nusantara dikembangkan oleh Vincent dan Radit, mahasiswa Teknik Informatika Soegijapranata Catholic University,
-                    dengan tujuan menghadirkan pengalaman belajar budaya Indonesia yang interaktif, menyenangkan, dan mudah diakses oleh semua kalangan. 
-                    Permainan ini diharapkan dapat menjadi jembatan untuk melestarikan serta mengenalkan kekayaan budaya Nusantara melalui cara yang lebih modern dan menyenangkan.
+                    <strong>Trilogi Nusantara</strong> adalah permainan memori edukatif berbasis kartu yang mengajak pemain mengenal kekayaan budaya Indonesia melalui cara yang seru dan interaktif. Dalam permainan ini, pemain dapat menjelajahi berbagai pulau dan kota di Nusantara beserta budaya, sejarah, dan ciri khasnya.
+                    Dikembangkan oleh Vincent dan Radit, mahasiswa Teknik Informatika Soegijapranata Catholic University, permainan ini bertujuan menghadirkan pengalaman belajar budaya Indonesia yang menyenangkan sekaligus membantu melestarikan warisan budaya Nusantara dengan cara yang modern.
                 </div>
             </div>
         </div>

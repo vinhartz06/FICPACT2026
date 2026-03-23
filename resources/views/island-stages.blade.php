@@ -106,34 +106,36 @@
 </head>
 <body class="min-h-dvh bg-gradient-to-br from-[#1E2A2A] via-[#2F2A24] to-[#4A2F1D] text-[#FCE6C4] flex flex-col">
 
-    <nav class="relative shrink-0 w-full px-4 sm:px-6 py-3 flex items-center justify-between
-                backdrop-blur-md bg-black/20 border-b border-white/10 min-h-[3.25rem]">
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 relative z-10 max-w-[46%] sm:max-w-none flex-wrap">
+    <!-- NAVBAR — responsive with mobile-optimized layout -->
+    <nav class="relative shrink-0 w-full px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between
+                backdrop-blur-md bg-black/20 border-b border-white/10 min-h-[3rem] sm:min-h-[3.25rem]">
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0 relative z-10 flex-wrap">
             <a href="{{ url('/') }}" title="Beranda"
-               class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
-                <span class="text-lg sm:text-xl" aria-hidden="true">🏠</span>
-                <span class="hidden sm:inline text-sm font-medium text-[#F2E0C9]">Beranda</span>
+               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+                <span class="text-sm sm:text-xl" aria-hidden="true">🏠</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Beranda</span>
             </a>
             <a href="{{ route('game') }}" title="Kembali ke peta pulau"
-               class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
-                <span class="text-sm sm:text-base" aria-hidden="true">🗺</span>
-                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Peta</span>
+               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+                <span class="text-xs sm:text-base" aria-hidden="true">🗺</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Peta</span>
             </a>
             <button type="button" id="nav-logout" title="Keluar"
-                    class="group flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
-                <span class="text-base sm:text-lg" aria-hidden="true">🚪</span>
-                <span class="hidden md:inline text-sm font-medium text-[#F2E0C9]">Keluar</span>
+                    class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
+                <span class="text-xs sm:text-lg" aria-hidden="true">🚪</span>
+                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Keluar</span>
             </button>
         </div>
 
+        <!-- Game Title — hidden on mobile, visible on tablet/desktop -->
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                   text-center text-base sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
+                   hidden sm:block text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
                    max-w-[calc(100vw-10rem)] sm:max-w-[calc(100vw-14rem)] md:max-w-none leading-tight
                    bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A] bg-clip-text text-transparent drop-shadow-md">
             Trilogi Nusantara
         </h1>
 
-        <div class="w-10 sm:w-16 md:w-24 shrink-0 relative z-10" aria-hidden="true"></div>
+        <div class="w-8 sm:w-10 md:w-16 shrink-0 relative z-10" aria-hidden="true"></div>
     </nav>
 
     <main class="flex-1 flex flex-col px-4 sm:px-6 py-4 sm:py-6 min-h-0 overflow-y-auto">
