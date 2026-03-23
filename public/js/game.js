@@ -231,7 +231,7 @@ async function showCompletionModal() {
       btnNextStage.disabled = true;
     }
   } else {
-    modalScore.textContent = 'Skor: ' + score + ' (login untuk simpan progres)';
+    modalScore.textContent = 'Skor: ' + score + ' (masuk untuk simpan progres)';
     btnNextStage.disabled = true;
   }
   completionModal.classList.remove('hidden');

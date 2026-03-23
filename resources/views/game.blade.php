@@ -50,79 +50,77 @@
             }
         }
 
-        /* no scroll on desktop */
         body {
-            overflow: hidden;
-            height: 100dvh;
+            height: auto;
+            min-height: 100dvh;
+        }
+        
+        /* Navbar text label class - for explicit control */
+        .nav-text-label {
+            transition: all 0.2s ease;
         }
     </style>
 </head>
-<body class="flex flex-col h-dvh">
+<body class="flex flex-col min-h-dvh bg-gradient-to-br from-[#1E2A2A] via-[#2F2A24] to-[#4A2F1D]">
 
     <!-- BACKGROUND: rich gradient + image overlay with low opacity -->
     <div class="fixed inset-0 -z-10">
-        <!-- main gradient: deep earthy to warm umber -->
         <div class="absolute inset-0 bg-gradient-to-br from-[#1E2A2A] via-[#2F2A24] to-[#4A2F1D]"></div>
-        <!-- background image with low opacity (0.25) layered on top -->
         <div class="absolute inset-0 bg-[url('{{ asset('images/dashboard.jpg') }}')] bg-cover bg-center opacity-90 mix-blend-overlay"></div>
-        <!-- subtle batik pattern -->
         <div class="absolute inset-0 batik-overlay opacity-30 mix-blend-soft-light"></div>
-        <!-- extra vignette for depth -->
         <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
     </div>
 
-    <!-- NAVBAR: below 1000px -> emoji only, no Trilogi Nusantara text -->
+    <!-- NAVBAR — FIX: Profile & Leaderboard emojis always visible -->
     <nav class="relative shrink-0 w-full px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between 
                 backdrop-blur-md bg-black/20 border-b border-white/10
                 transition-all duration-300 min-h-[3rem] sm:min-h-[3.25rem]">
         
-        <!-- Left buttons: emoji only on mobile, emoji + text above 1000px -->
+        <!-- Left side buttons -->
         <div class="flex items-center gap-1 sm:gap-2 shrink-0 relative z-10">
             <a href="{{ url('/') }}" title="Kembali ke halaman utama"
-               class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                       bg-white/5 hover:bg-white/20 transition-all 
                       backdrop-blur-sm border border-white/10">
-                <span class="text-base sm:text-xl drop-shadow-sm" aria-hidden="true">🏠</span>
-                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Beranda</span>
+                <span class="text-base sm:text-xl drop-shadow-sm">🏠</span>
+                <span class="nav-text-label hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Beranda</span>
             </a>
-            <a href="#" id="nav-profil" class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+            <a href="#" id="nav-profil" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                               bg-white/5 hover:bg-white/20 transition-all 
                               backdrop-blur-sm border border-white/10">
-                <span class="text-base sm:text-xl drop-shadow-sm" aria-hidden="true">👤</span>
-                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Profil</span>
+                <span class="text-base sm:text-xl drop-shadow-sm">👤</span>
+                <span class="nav-text-label hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Profil</span>
             </a>
             <button type="button" id="nav-logout" title="Keluar dari akun / kembali ke beranda"
-                    class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+                    class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                            bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all 
                            backdrop-blur-sm border border-white/10 cursor-pointer">
-                <span class="text-sm sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
-                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Keluar</span>
+                <span class="text-sm sm:text-lg drop-shadow-sm">🚪</span>
+                <span class="nav-text-label hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Keluar</span>
             </button>
         </div>
 
-        <!-- Game Title: hidden below 1000px, visible above -->
+        <!-- Game Title -->
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                   text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
+                   hidden sm:block text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
                    max-w-[calc(100vw-9.5rem)] sm:max-w-[calc(100vw-12rem)] md:max-w-none leading-tight
                    bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A]
-                   bg-clip-text text-transparent drop-shadow-md"
-            style="display: none;">
+                   bg-clip-text text-transparent drop-shadow-md">
             Trilogi Nusantara
         </h1>
 
-        <!-- Leaderboard - emoji only below 1000px -->
-        <a href="#" id="nav-leaderboard" class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shrink-0 relative z-10
+        <!-- Leaderboard - EMOJI ALWAYS VISIBLE, text hidden on mobile -->
+        <a href="#" id="nav-leaderboard" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shrink-0 relative z-10
                           bg-white/5 hover:bg-white/20 transition-all 
                           backdrop-blur-sm border border-white/10">
-            <span class="text-sm sm:text-base drop-shadow" aria-hidden="true">🏆</span>
-            <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Leaderboard</span>
+            <span class="text-sm sm:text-base drop-shadow">🏆</span>
+            <span class="nav-text-label hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
         </a>
     </nav>
 
-    <!-- MAIN CONTENT — flex, no scroll on desktop -->
-    <main class="flex-1 min-h-0 flex flex-col px-5 md:px-6 py-2 md:py-3 overflow-hidden">
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 flex flex-col px-5 md:px-6 py-2 md:py-3 overflow-y-auto min-h-0">
         
-        <!-- title section with refined colors -->
         <div class="shrink-0 text-center mb-3 md:mb-4">
             <h2 class="text-3xl md:text-5xl font-black tracking-wide 
                        bg-gradient-to-r from-[#FBE6B0] to-[#E2B670] 
@@ -137,7 +135,7 @@
             </p>
         </div>
 
-        <!-- MAP: kotak terang + peta lebih besar agar siluet hitam kontras -->
+        <!-- MAP -->
         <div class="flex-1 min-h-0 flex items-center justify-center w-full px-1 sm:px-3">
             <div class="island-map-card w-full max-w-[min(92vw,900px)] rounded-2xl border-2 border-[#d4a017]/35
                         bg-[#faf6ef]/[0.68] backdrop-blur-lg shadow-[0_16px_40px_rgba(0,0,0,0.32)]
@@ -149,7 +147,6 @@
                      alt="Peta Nusantara"
                      style="pointer-events: auto;">
                 
-                <!-- island labels (relative to image) -->
                 <a href="#" class="island-label" data-island="sumatra" style="top: 29%; left: 9%;">⚡ Sumatra</a>
                 <a href="#" class="island-label" data-island="jawa" style="top: 73%; left: 31%;">🌾 Jawa</a>
                 <a href="#" class="island-label" data-island="bali" style="top: 76%; left: 48%;">🌺 Bali</a>
@@ -160,41 +157,43 @@
             </div>
         </div>
 
-        <!-- subtle decorative footer -->
         <div class="shrink-0 flex justify-center gap-3 mt-2 text-amber-200/40 text-xs font-medium">
             <span>© 2026 Trilogi Nusantara</span>
         </div>
     </main>
 
     <style>
-        /* BELOW 1000px: hide Trilogi Nusantara title, buttons emoji only */
+        /* FIX: On screens below 1000px, hide ONLY the title and the text labels (class="nav-text-label") */
+        /* The emojis (spans without .nav-text-label class) remain FULLY VISIBLE */
         @media (max-width: 1000px) {
-            .navbar-title {
+            /* Hide the main title */
+            nav h1 {
                 display: none !important;
             }
-            /* Ensure text labels are hidden */
-            nav .group span:not([aria-hidden="true"]) {
+            /* Hide ONLY the text labels (Beranda, Profil, Keluar, Leaderboard) */
+            .nav-text-label {
                 display: none !important;
             }
+            /* No need to hide emojis - they stay visible automatically */
         }
 
-        /* ABOVE 1000px: show Trilogi Nusantara title and button text */
+        /* ABOVE 1000px: show everything normally */
         @media (min-width: 1001px) {
-            h1 {
+            nav h1 {
                 display: block !important;
             }
-            nav .group span:not([aria-hidden="true"]) {
+            .nav-text-label {
                 display: inline-block !important;
             }
         }
 
-        /* desktop: no scroll, image scaling perfect */
+        /* desktop adjustments */
         @media (min-width: 1024px) {
             body {
-                overflow: hidden;
+                overflow-y: auto;
             }
             main {
-                overflow-y: visible;
+                overflow-y: auto;
             }
             .island-label {
                 font-size: 0.85rem;
@@ -208,7 +207,6 @@
             }
         }
         
-        /* tablet and mobile: allow gentle scroll if needed but keep body clean */
         @media (max-width: 1023px) {
             .indonesia-map-img {
                 max-height: min(58vh, 520px);
@@ -227,14 +225,12 @@
             }
         }
 
-        /* large screens adjustment */
         @media (min-width: 1600px) {
             .indonesia-map-img {
                 max-height: min(72vh, 760px);
             }
         }
         
-        /* responsive label position tweaks for smaller devices */
         @media (max-width: 768px) {
             a.island-label[style*="top: 29%"] { top: 28% !important; left: 7% !important; }
             a.island-label[style*="top: 73%"] { top: 72% !important; left: 29% !important; }
@@ -242,6 +238,13 @@
             a.island-label[style*="top: 34%"] { top: 33% !important; left: 32% !important; }
             a.island-label[style*="top: 44%"] { top: 43% !important; left: 49% !important; }
             a.island-label[style*="top: 53%"] { top: 52% !important; left: 80% !important; }
+        }
+        
+        /* Ensure all emoji spans are always visible and properly sized */
+        .group span:first-child {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
     </style>
     <script>window.TRILOGI_HOME_URL = @json(url('/'));</script>

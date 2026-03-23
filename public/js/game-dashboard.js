@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (Auth.isGuest()) {
           inner2.innerHTML =
             '<p class="text-white font-semibold mb-2">Mode tamu</p>' +
-            '<p class="text-sm text-amber-100/80">Login untuk menyimpan skor dan progres.</p>';
+            '<p class="text-sm text-amber-100/80">Masuk untuk menyimpan skor dan progres.</p>';
           return;
         }
         var p = await Auth.getProgress();
