@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar - Trilogi Nusantara</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <style>
         .batik-overlay {
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L35 20L50 20L38 30L43 45L30 37L17 45L22 30L10 20L25 20L30 5Z' fill='%23C1440E' fill-opacity='0.03'/%3E%3C/svg%3E");
@@ -14,7 +14,7 @@
 <body class="min-h-screen relative flex items-center justify-center p-4">
     {{-- Fullscreen Background --}}
     <div class="fixed inset-0 z-0">
-        <img src={{ asset('images/toba.jpg') }}
+        <img src={{ asset('images/register.jpg') }}
              alt="Indonesia Background" 
              class="w-full h-full object-cover">
         {{-- Gradient Overlay --}}
@@ -38,7 +38,17 @@
                 <p class="text-center text-white/80 text-sm mb-8">Mulai petualanganmu menjelajahi kekayaan budaya Indonesia</p>
 
                 {{-- Form --}}
-                <form class="space-y-4">
+                <form class="space-y-4" method="POST" action="{{ route('register.submit') }}">
+                    @csrf
+                    @if ($errors->any())
+                        <div class="rounded-xl bg-red-500/20 border border-red-400/40 text-white text-sm p-3 space-y-1" role="alert">
+                            <ul class="list-disc list-inside">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     {{-- Name Input --}}
                     <div>
                         <label class="block text-white/90 text-sm font-medium mb-2">Username</label>
@@ -124,7 +134,14 @@
                     {{-- Login Link --}}
                     <p class="text-center text-white/80 text-sm">
                         Sudah punya akun? 
-                        <a href="/login" class="text-[#D4A017] font-semibold hover:text-[#C1440E] transition-colors duration-300">Masuk</a>
+                        <a href="{{ route('login') }}" class="text-[#D4A017] font-semibold hover:text-[#C1440E] transition-colors duration-300">Masuk</a>
+                    </p>
+
+                    {{-- Back --}}
+                    <p class="text-center text-white/70 text-sm mt-2 italic">
+                        <a href="{{ route('landing') }}" class="hover:underline">
+                            ← Kembali ke Beranda
+                        </a>
                     </p>
                 </form>
             </div>
@@ -135,7 +152,3 @@
     </div>
 </body>
 </html>
-
-{{-- note:
-- sambungin ke backend
-- tambahin error message (password tidak sama dengan confirmation, password kurang dari 8 karakter, dll) --}}
