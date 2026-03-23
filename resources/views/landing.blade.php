@@ -820,14 +820,177 @@
                 font-size: 0.85rem;
             }
         }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            animation: float 3s ease-in-out infinite;
+
+        /* Modal Popup Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 160, 23, 0.2);
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(212, 160, 23, 0.2);
+            color: #FFD700;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .about-text {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(212, 160, 23, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1px;
+            font-size: 0.85rem;
+        }
+
+        .contact-value {
+            font-size: 0.85rem;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 15px;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+        }
+
+        .team-member h3 {
+            color: #FFD700;
+            margin-bottom: 7px;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .social-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-link:hover {
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .team-member {
+                padding: 12px;
+            }
+            
+            .contact-item {
+                padding: 10px 0;
+            }
         }
     </style>
 </head>
@@ -947,7 +1110,6 @@
             <div class="footer-title">Trilogi Nusantara</div>
             <div class="footer-tagline">"Temukan, Hubungkan, Jelajahi Nusantara."</div>
             <div class="footer-links">
-                <a href="#" class="footer-link">Beranda</a>
                 <a href="#" class="footer-link">Tentang Kami</a>
                 <a href="#" class="footer-link">Hubungi Kami</a>
             </div>
@@ -956,6 +1118,94 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Tentang Kami -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tentang Kami</h2>
+                <button class="modal-close" onclick="closeModal('aboutModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="about-text">
+                    <strong>Trilogi Nusantara</strong> adalah permainan memori edukatif yang mengajak pemain untuk mengenal dan menjelajahi kekayaan budaya Indonesia melalui mekanik permainan kartu yang seru dan menantang.
+                    Dalam permainan ini, pemain dapat menemukan berbagai keunikan dari beragam pulau dan kota di Nusantara yang masing-masing memiliki budaya, sejarah, dan ciri khasnya sendiri.
+                    <br><br>
+                    Trilogi Nusantara dikembangkan oleh Vincent dan Radit, mahasiswa Teknik Informatika Soegijapranata Catholic University,
+                    dengan tujuan menghadirkan pengalaman belajar budaya Indonesia yang interaktif, menyenangkan, dan mudah diakses oleh semua kalangan. 
+                    Permainan ini diharapkan dapat menjadi jembatan untuk melestarikan serta mengenalkan kekayaan budaya Nusantara melalui cara yang lebih modern dan menyenangkan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hubungi Kami -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Hubungi Kami</h2>
+                <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h3>Jonathan Vincent</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.332.012 7.052.07 5.763.128 4.75.358 3.877.83c-.902.493-1.668 1.144-2.331 1.807-.663.663-1.314 1.429-1.807 2.331-.472.873-.702 1.886-.76 3.175C.012 8.332 0 8.741 0 12s.012 3.668.07 4.948c.058 1.289.288 2.302.76 3.175.493.902 1.144 1.668 1.807 2.331.663.663 1.429 1.314 2.331 1.807.873.472 1.886.702 3.175.76 1.28.058 1.689.07 4.948.07s3.668-.012 4.948-.07c1.289-.058 2.302-.288 3.175-.76.902-.493 1.668-1.144 2.331-1.807.663-.663 1.314-1.429 1.807-2.331.472-.873.702-1.886.76-3.175.058-1.28.07-1.689.07-4.948s-.012-3.668-.07-4.948c-.058-1.289-.288-2.302-.76-3.175-.493-.902-1.144-1.668-1.807-2.331-.663-.663-1.429-1.314-2.331-1.807-.873-.472-1.886-.702-3.175-.76C15.668.012 15.259 0 12 0z" fill="#FFD700"/>
+                                    <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="#FFD700"/>
+                                    <circle cx="18.406" cy="5.594" r="1.44" fill="#FFD700"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">Instagram</div>
+                                <div class="contact-value"><a href="https://instagram.com/j.vincent2006" target="_blank">@j.vincent2006</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 0.296c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.296c0-6.627-5.373-12-12-12z" fill="#FFD700"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">GitHub</div>
+                                <div class="contact-value"><a href="https://github.com/vinhartz06" target="_blank">github.com/vinhartz06</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <h3>Claudio Raditya</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.332.012 7.052.07 5.763.128 4.75.358 3.877.83c-.902.493-1.668 1.144-2.331 1.807-.663.663-1.314 1.429-1.807 2.331-.472.873-.702 1.886-.76 3.175C.012 8.332 0 8.741 0 12s.012 3.668.07 4.948c.058 1.289.288 2.302.76 3.175.493.902 1.144 1.668 1.807 2.331.663.663 1.429 1.314 2.331 1.807.873.472 1.886.702 3.175.76 1.28.058 1.689.07 4.948.07s3.668-.012 4.948-.07c1.289-.058 2.302-.288 3.175-.76.902-.493 1.668-1.144 2.331-1.807.663-.663 1.314-1.429 1.807-2.331.472-.873.702-1.886.76-3.175.058-1.28.07-1.689.07-4.948s-.012-3.668-.07-4.948c-.058-1.289-.288-2.302-.76-3.175-.493-.902-1.144-1.668-1.807-2.331-.663-.663-1.429-1.314-2.331-1.807-.873-.472-1.886-.702-3.175-.76C15.668.012 15.259 0 12 0z" fill="#FFD700"/>
+                                    <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="#FFD700"/>
+                                    <circle cx="18.406" cy="5.594" r="1.44" fill="#FFD700"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">Instagram</div>
+                                <div class="contact-value"><a href="https://instagram.com/cradityabp" target="_blank">@cradityabp</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 0.296c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.296c0-6.627-5.373-12-12-12z" fill="#FFD700"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">GitHub</div>
+                                <div class="contact-value"><a href="https://github.com/pamungkas06" target="_blank">github.com/pamungkas06</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="js/auth.js"></script>
 <script src="js/landing.js"></script>

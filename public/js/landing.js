@@ -56,3 +56,43 @@ document.addEventListener('DOMContentLoaded', function() {
     Auth.setGuestMode(false);
   });
 });
+
+    // Fungsi untuk membuka modal
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Fungsi untuk menutup modal
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Tutup modal jika klik di luar konten
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    // Tambahkan event listener untuk link footer
+    document.addEventListener('DOMContentLoaded', function() {
+        const aboutLink = document.querySelector('.footer-link:first-child');
+        const contactLink = document.querySelector('.footer-link:last-child');
+        
+        if (aboutLink) {
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('aboutModal');
+            });
+        }
+        
+        if (contactLink) {
+            contactLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('contactModal');
+            });
+        }
+    });
