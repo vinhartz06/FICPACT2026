@@ -67,7 +67,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 1 - Semarang',
                 'city_name' => 'Semarang',
                 'region' => 'Jawa Tengah',
-                /* Pantai utara — geser ke bawah (y↑) supaya di daratan, bukan di laut */
+                'desc1' => 'Semarang merupakan ibu kota Provinsi Jawa Tengah yang berkembang sebagai pusat ekonomi, perdagangan, dan pemerintahan. Kota ini memiliki karakter unik melalui perpaduan kawasan kota lama dan perkembangan urban modern, dengan ikon seperti Lawang Sewu dan Kota Lama yang mencerminkan sejarah kolonial, serta Simpang Lima sebagai pusat aktivitas masyarakat yang dinamis.',
+                'desc2' => 'Selain itu, Semarang dikenal dengan keberagaman budaya hasil pertemuan etnis Jawa dan Tionghoa, terlihat dari kawasan Pecinan dan Klenteng Sam Poo Kong sebagai simbol akulturasi. Di sisi lain, kekayaan kuliner seperti lumpia Semarang, tahu gimbal, dan wingko babat semakin memperkuat daya tarik kota ini, menjadikannya salah satu kota penting di Pulau Jawa dengan identitas yang lengkap.',
                 'map_pin_x' => 53,
                 'map_pin_y' => 47,
                 'trilogies' => [
@@ -108,7 +109,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 2 - Jakarta',
                 'city_name' => 'Jakarta',
                 'region' => 'DKI Jakarta',
-                /* Ujung barat daya Jabodetabek — lebih ke kiri (x↓) */
+                'desc1' => 'Jakarta merupakan ibu kota negara Indonesia yang berperan sebagai pusat pemerintahan, ekonomi, dan kegiatan nasional. Kota ini menjadi wilayah metropolitan terbesar dengan aktivitas yang padat dan dinamis, mencerminkan perannya dalam berbagai sektor seperti bisnis, politik, dan budaya, dengan ikon seperti Monas dan kawasan bisnis modern yang memperkuat identitasnya.',
+                'desc2' => 'Selain itu, Jakarta memiliki keberagaman budaya yang tinggi dengan berbagai suku dan latar belakang masyarakat yang hidup berdampingan. Perpaduan antara kawasan bersejarah seperti Kota Tua dan gedung modern menunjukkan perkembangan kota yang berkelanjutan. Kekayaan kuliner seperti kerak telor, soto Betawi, hingga hidangan dari berbagai daerah turut melengkapi karakter Jakarta sebagai pusat aktivitas dan wajah utama Indonesia.',
                 'map_pin_x' => 23,
                 'map_pin_y' => 35,
                 'trilogies' => [
