@@ -151,6 +151,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 3 - Bandung',
                 'city_name' => 'Bandung',
                 'region' => 'Jawa Barat',
+                'desc1' => 'Bandung merupakan ibu kota Provinsi Jawa Barat yang dikenal sebagai pusat kreativitas, pendidikan, dan pariwisata dengan suasana sejuk serta perkembangan urban yang dinamis. Ikon seperti Gedung Sate dan kawasan Braga mencerminkan perpaduan nilai sejarah dan gaya hidup modern yang membentuk karakter khas kota ini.',
+                'desc2' => 'Selain itu, Bandung memiliki kekuatan di bidang industri kreatif dan pendidikan, didukung perguruan tinggi dan komunitas kreatif yang aktif, serta perkembangan sektor fesyen, kuliner, dan teknologi. Kekayaan kuliner seperti batagor, siomay, dan seblak turut memperkuat daya tariknya, menjadikan Bandung memiliki karakter kuat melalui perpaduan kreativitas, sejarah, dan kuliner.',
                 /* Priangan — tenggara Jakarta */
                 'map_pin_x' => 30.3,
                 'map_pin_y' => 47,
@@ -192,6 +194,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 4 - Surabaya',
                 'city_name' => 'Surabaya',
                 'region' => 'Jawa Timur',
+                'desc1' => 'Surabaya merupakan ibu kota Provinsi Jawa Timur yang dikenal sebagai pusat ekonomi, perdagangan, dan industri besar di Indonesia. Kota ini memiliki peran penting dalam sejarah nasional sebagai kota perjuangan, dengan ikon seperti Tugu Pahlawan dan kawasan bersejarah yang memperkuat identitasnya sebagai kota sarat nilai historis.',
+                'desc2' => 'Selain itu, Surabaya berkembang sebagai kota metropolitan dengan infrastruktur modern dan aktivitas yang dinamis, didukung pusat bisnis, pelabuhan, dan ruang publik yang terus tumbuh. Keberagaman budaya tetap terjaga, sementara kuliner khas seperti rawon, rujak cingur, dan lontong balap memperkuat identitas lokal, menjadikan Surabaya memiliki karakter yang menonjol melalui perpaduan sejarah, modernitas, dan kuliner.',
                 /* Pantai utara Jatim — sama: y cukup besar biar di daratan */
                 'map_pin_x' => 72,
                 'map_pin_y' => 52,
@@ -233,6 +237,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 5 - Yogyakarta',
                 'city_name' => 'Yogyakarta',
                 'region' => 'DI Yogyakarta',
+                'desc1' => 'Yogyakarta merupakan ibu kota Provinsi Daerah Istimewa Yogyakarta yang dikenal sebagai pusat budaya, pendidikan, dan pariwisata di Indonesia. Identitasnya berakar dari sejarah Keraton Yogyakarta sebagai simbol pemerintahan dan kebudayaan Jawa, diperkuat oleh Malioboro sebagai pusat wisata dan Tugu Yogyakarta sebagai ikon kota yang mencerminkan karakter khasnya.',
+                'desc2' => 'Selain itu, Yogyakarta dikenal sebagai kota pelajar dengan banyak institusi pendidikan serta kehidupan seni dan budaya yang berkembang pesat melalui pertunjukan dan kegiatan kreatif. Kekayaan kuliner seperti gudeg, bakpia, dan jajanan tradisional turut melengkapi daya tariknya, menjadikan kota ini memiliki karakter kuat melalui perpaduan budaya, pendidikan, dan kuliner.',
                 /* Barat daya Solo (bukan tegak selatan) */
                 'map_pin_x' => 53,
                 'map_pin_y' => 64.5,
@@ -274,6 +280,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 6 - Bali',
                 'city_name' => 'Bali',
                 'region' => 'Bali',
+                'desc1' => 'Bali merupakan salah satu provinsi di Indonesia yang memadukan keindahan alam, kekayaan budaya, dan daya tarik wisata kelas dunia. Ikon seperti Pantai Kuta, Tanah Lot, dan Garuda Wisnu Kencana mencerminkan karakter pulau yang kuat, dengan perpaduan antara panorama alam, nilai sakral, dan simbol budaya yang megah.',
+                'desc2' => 'Selain itu, Bali dikenal dengan kehidupan seni dan tradisi yang kental, terutama di Ubud sebagai pusat budaya, serta Pura Besakih yang menunjukkan kedalaman spiritual masyarakatnya. Berbagai destinasi seperti Seminyak, Nusa Dua, dan Kintamani hingga Ulun Danu Beratan, serta kuliner khas seperti babi guling, melengkapi daya tariknya, menjadikan Bali sebagai wilayah dengan pengalaman wisata yang utuh dan beragam.',
                 'map_pin_x' => 20,
                 'map_pin_y' => 46,
                 'trilogies' => [
@@ -339,6 +347,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 7 - Solo',
                 'city_name' => 'Solo',
                 'region' => 'Jawa Tengah',
+                'desc1' => 'Solo atau Surakarta merupakan salah satu kota di Provinsi Jawa Tengah yang dikenal sebagai pusat budaya Jawa yang masih terjaga kuat. Identitas kota ini erat dengan Keraton Surakarta dan Pura Mangkunegaran sebagai simbol sejarah dan tradisi, serta kehidupan masyarakat yang mencerminkan nilai budaya Jawa dalam seni, adat, dan keseharian.',
+                'desc2' => 'Selain itu, Solo berkembang sebagai kota yang dinamis dengan perpaduan tradisi dan modernitas, terlihat dari pelestarian seni seperti batik, wayang, dan musik tradisional serta pertumbuhan sektor perdagangan dan pariwisata. Kekayaan kuliner seperti nasi liwet, tengkleng, dan serabi Solo turut memperkuat daya tariknya, menjadikan kota ini memiliki karakter kuat melalui kombinasi budaya, sejarah, dan kuliner.',
                 /* Timur Magelang & Yogya — bukan utara Semarang */
                 'map_pin_x' => 56.5,
                 'map_pin_y' => 57,
@@ -384,7 +394,9 @@ class StageSeeder extends Seeder
                 'stage_number' => 8,
                 'name' => 'Stage 8 - Medan',
                 'city_name' => 'Medan',
-                'region' => 'Sumatera Utara',
+                'region' => 'Sumatra Utara',
+                'desc1' => 'Medan adalah ibu kota Provinsi Sumatra Utara yang berperan sebagai pusat ekonomi, budaya, dan pariwisata. Keberagaman etnis serta warisan sejarah tercermin dalam bangunan ikonik dan perkembangan kotanya yang dinamis, membentuk karakter urban yang kuat sekaligus kaya nilai historis.',
+                'desc2' => 'Kota ini juga dikenal sebagai destinasi kuliner penting di Indonesia bagian barat dengan ragam hidangan tradisional hingga modern. Didukung aktivitas perdagangan, jasa, dan pariwisata, Medan menjadi pintu gerbang utama menuju berbagai destinasi di Sumatra Utara, termasuk Danau Toba dan Pulau Samosir yang sering menjadi tujuan lanjutan wisatawan.',
                 'map_pin_x' => 39,
                 'map_pin_y' => 25,
                 'trilogies' => [
@@ -445,6 +457,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 9 - Makassar',
                 'city_name' => 'Makassar',
                 'region' => 'Sulawesi Selatan',
+                'desc1' => 'Makassar merupakan salah satu kota di Provinsi Sulawesi Selatan yang dikenal sebagai pusat ekonomi, perdagangan, dan pelabuhan di kawasan timur Indonesia. Kota ini memiliki peran penting sebagai pintu gerbang distribusi barang dan jasa, dengan perkembangan urban yang dinamis serta aktivitas masyarakat yang tinggi di berbagai sektor.',
+                'desc2' => 'Selain itu, Makassar memiliki kekayaan sejarah dan budaya yang tercermin dari keberadaan Benteng Rotterdam sebagai salah satu ikon utama peninggalan kolonial yang masih terawat. Kehadiran situs bersejarah ini, bersama dengan kekayaan kuliner dan budaya lokal, menjadikan Makassar memiliki karakter kuat melalui perpaduan sejarah, aktivitas ekonomi, dan kehidupan masyarakat yang beragam.',
                 'map_pin_x' => 40,
                 'map_pin_y' => 83,
                 'trilogies' => [
@@ -489,7 +503,9 @@ class StageSeeder extends Seeder
                 'stage_number' => 10,
                 'name' => 'Stage 10 - Palembang',
                 'city_name' => 'Palembang',
-                'region' => 'Sumatera Selatan',
+                'region' => 'Sumatra Selatan',
+                'desc1' => 'Palembang merupakan ibu kota Provinsi Sumatra Selatan yang berkembang sebagai pusat sejarah, budaya, dan ekonomi. Letaknya di sepanjang Sungai Musi memberi peran penting sejak masa lampau, dengan berbagai peninggalan sejarah yang masih bertahan. Identitas kota terbentuk dari perpaduan warisan budaya, perkembangan urban, dan kehidupan masyarakat yang dinamis.',
+                'desc2' => 'Perkembangannya terlihat dari infrastruktur modern serta peran dalam ajang nasional dan internasional seperti Asian Games dan SEA Games, didukung kawasan olahraga terpadu. Aktivitas masyarakat yang erat dengan sungai, pusat ekonomi, dan religi memperkuat karakter kota yang terus bertumbuh. Selain itu, Palembang dikenal sebagai destinasi kuliner khas berbasis ikan dengan cita rasa lokal yang kuat, menjadikannya memiliki identitas regional dan nasional yang menonjol.',
                 'map_pin_x' => 65,
                 'map_pin_y' => 71,
                 'trilogies' => [
@@ -549,7 +565,9 @@ class StageSeeder extends Seeder
                 'stage_number' => 11,
                 'name' => 'Stage 11 - Padang',
                 'city_name' => 'Padang',
-                'region' => 'Sumatera Barat',
+                'region' => 'Sumatra Barat',
+                'desc1' => 'Padang merupakan ibu kota Provinsi Sumatra Barat yang menjadi pusat ekonomi, budaya, dan pariwisata, dengan identitas kuat budaya Minangkabau yang tercermin dalam kehidupan masyarakat, arsitektur, dan tradisi. Letaknya di pesisir barat Sumatra menjadikannya wilayah strategis dengan dinamika perdagangan dan interaksi yang terus berkembang.',
+                'desc2' => 'Kota ini juga dikenal secara global melalui kekayaan kulinernya seperti rendang, sate Padang, dan dendeng balado yang bercita rasa rempah kuat. Selain itu, Padang berperan sebagai representasi budaya Minangkabau, termasuk dalam seni seperti Tari Piring dari Solok, menjadikannya etalase tradisi dan seni budaya di tingkat regional dan nasional.',
                 'map_pin_x' => 45,
                 'map_pin_y' => 45,
                 'trilogies' => [
@@ -610,6 +628,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 12 - Manado',
                 'city_name' => 'Manado',
                 'region' => 'Sulawesi Utara',
+                'desc1' => 'Manado merupakan ibu kota Provinsi Sulawesi Utara yang dikenal sebagai pusat pemerintahan, perdagangan, dan pariwisata di kawasan tersebut. Kota ini memiliki letak strategis di pesisir utara Sulawesi dengan panorama laut yang indah, serta menjadi pintu gerbang menuju berbagai destinasi wisata alam unggulan.',
+                'desc2' => 'Selain itu, Manado dikenal dengan keberagaman budaya dan masyarakatnya yang harmonis, serta kekayaan kuliner khas yang terkenal dengan cita rasa kuat seperti tinutuan dan ikan cakalang. Kedekatan dengan destinasi wisata bahari seperti Bunaken juga memperkuat identitasnya, menjadikan Manado memiliki karakter yang kuat melalui perpaduan alam, budaya, dan kehidupan kota yang dinamis.',
                 'map_pin_x' => 64,
                 'map_pin_y' => 16,
                 'trilogies' => [
@@ -660,6 +680,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 13 - Balikpapan',
                 'city_name' => 'Balikpapan',
                 'region' => 'Kalimantan Timur',
+                'desc1' => 'Balikpapan merupakan salah satu kota di Provinsi Kalimantan Timur yang dikenal sebagai pusat industri dan energi, terutama dalam sektor minyak dan gas. Perkembangan kota ini didukung oleh infrastruktur yang relatif modern serta tata kota yang tertata, menjadikannya salah satu kota dengan tingkat kenyamanan tinggi di Kalimantan.',
+                'desc2' => 'Selain itu, Balikpapan memiliki lingkungan yang masih terjaga dengan kawasan hutan dan pesisir yang menjadi bagian dari identitasnya. Aktivitas ekonomi yang kuat berpadu dengan kesadaran terhadap kelestarian alam, serta keberagaman budaya dan kuliner, menjadikan kota ini memiliki karakter yang seimbang antara industri, lingkungan, dan kehidupan masyarakat.',
                 'map_pin_x' => 62.7,
                 'map_pin_y' => 70,
                 'trilogies' => [
@@ -700,6 +722,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 14 - Samarinda',
                 'city_name' => 'Samarinda',
                 'region' => 'Kalimantan Timur',
+                'desc1' => 'Samarinda merupakan ibu kota Provinsi Kalimantan Timur yang dikenal sebagai pusat pemerintahan, perdagangan, dan aktivitas ekonomi di wilayah tersebut. Kota ini berkembang di sepanjang Sungai Mahakam yang menjadi jalur utama transportasi dan kehidupan masyarakat, membentuk karakter kota yang erat dengan budaya sungai.',
+                'desc2' => 'Selain itu, Samarinda memiliki keberagaman budaya yang tercermin dari kehidupan masyarakat multietnis yang hidup berdampingan. Aktivitas ekonomi yang dinamis, kekayaan kuliner lokal, serta perkembangan kota yang terus berlangsung menjadikan Samarinda memiliki karakter yang kuat melalui perpaduan budaya, perdagangan, dan kehidupan sungai.',
                 'map_pin_x' => 63,
                 'map_pin_y' => 65,
                 'trilogies' => [
@@ -740,6 +764,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 15 - Pontianak',
                 'city_name' => 'Pontianak',
                 'region' => 'Kalimantan Barat',
+                'desc1' => 'Pontianak merupakan ibu kota Provinsi Kalimantan Barat yang dikenal sebagai kota yang dilalui garis khatulistiwa, menjadikannya memiliki posisi geografis yang unik. Identitas kota ini tercermin dari Tugu Khatulistiwa sebagai ikon utama, serta peran Sungai Kapuas yang menjadi urat nadi kehidupan dan aktivitas masyarakat sejak dahulu.',
+                'desc2' => 'Selain itu, Pontianak memiliki keberagaman budaya yang terbentuk dari perpaduan etnis Melayu, Tionghoa, dan Dayak. Kehidupan masyarakat yang dinamis, tradisi yang masih terjaga, serta kekayaan kuliner khas semakin memperkuat karakter kota ini, menjadikannya memiliki daya tarik tersendiri di Kalimantan Barat.',
                 'map_pin_x' => 36.5,
                 'map_pin_y' => 61.5,
                 'trilogies' => [
@@ -780,6 +806,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 16 - Magelang',
                 'city_name' => 'Magelang',
                 'region' => 'Jawa Tengah',
+                'desc1' => 'Magelang merupakan salah satu wilayah di Provinsi Jawa Tengah yang dikenal dengan perpaduan sejarah, budaya, dan letak geografis yang strategis. Kota dan kabupaten Magelang dikelilingi pegunungan yang menciptakan suasana sejuk serta lanskap khas, dengan Candi Borobudur sebagai ikon utama dan warisan budaya dunia yang melekat kuat pada identitas wilayah ini.',
+                'desc2' => 'Selain itu, Magelang berkembang sebagai pusat pendidikan dan aktivitas militer serta daerah penyangga pariwisata, didukung destinasi alam seperti perbukitan dan pegunungan. Kekayaan budaya dan kuliner lokal yang mencerminkan kehidupan masyarakat Jawa turut memperkuat identitasnya, menjadikan Magelang memiliki karakter yang beragam melalui perpaduan sejarah, alam, dan tradisi.',
                 /* Selatan Semarang — antara Semarang–Solo */
                 'map_pin_x' => 51,
                 'map_pin_y' => 59,
@@ -821,6 +849,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 17 - Jepara',
                 'city_name' => 'Jepara',
                 'region' => 'Jawa Tengah',
+                'desc1' => 'Jepara merupakan salah satu kabupaten di Provinsi Jawa Tengah yang dikenal sebagai pusat seni ukir dan industri mebel bertaraf dunia. Identitas ini terbentuk dari tradisi panjang kerajinan kayu yang diwariskan turun-temurun, serta kaitannya dengan tokoh emansipasi wanita Indonesia, R.A. Kartini, yang memperkuat nilai sejarah daerah ini.',
+                'desc2' => 'Di sisi lain, Jepara memiliki potensi wisata alam, terutama di kawasan pesisir seperti Kepulauan Karimunjawa dengan keindahan laut dan ekosistemnya. Selain itu, kekayaan budaya dan kuliner lokal turut memperkuat identitas daerah, menjadikan Jepara memiliki karakter yang kuat melalui perpaduan seni ukir, wisata bahari, dan tradisi.',
                 'map_pin_x' => 56,
                 'map_pin_y' => 40,
                 'trilogies' => [
@@ -861,6 +891,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 18 - Kudus',
                 'city_name' => 'Kudus',
                 'region' => 'Jawa Tengah',
+                'desc1' => 'Kudus merupakan salah satu kota di Provinsi Jawa Tengah yang dikenal sebagai pusat budaya dan religi dengan sejarah panjang dalam penyebaran Islam di Indonesia. Identitas kota tercermin dari Masjid Menara Kudus sebagai ikon utama yang memadukan arsitektur Islam dan Hindu, serta kehidupan masyarakat yang lekat dengan nilai keagamaan sebagai kota santri.',
+                'desc2' => 'Di sisi lain, Kudus memiliki peran penting dalam industri, khususnya sebagai pusat rokok kretek, dengan aktivitas perdagangan dan ekonomi yang terus berkembang. Kekayaan kuliner seperti soto Kudus dan jenang Kudus turut memperkuat identitas lokal, menjadikan kota ini memiliki daya tarik unik melalui perpaduan sejarah religi, ekonomi, dan tradisi.',
                 'map_pin_x' => 57.2,
                 'map_pin_y' => 44.8,
                 'trilogies' => [
@@ -901,6 +933,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 19 - Pekanbaru',
                 'city_name' => 'Pekanbaru',
                 'region' => 'Riau',
+                'desc1' => 'Pekanbaru merupakan ibu kota Provinsi Riau yang dikenal sebagai pusat pemerintahan, ekonomi, dan perdagangan di wilayah tersebut. Kota ini berkembang pesat sebagai salah satu pusat industri dan jasa di Sumatra, didukung oleh letaknya yang strategis serta aktivitas ekonomi yang terus meningkat.',
+                'desc2' => 'Selain itu, Pekanbaru memiliki keberagaman budaya yang terbentuk dari masyarakat Melayu sebagai identitas utama, berpadu dengan berbagai etnis lain yang hidup berdampingan. Tradisi Melayu masih sangat terasa dalam kehidupan sehari-hari, sementara kuliner khas dan perkembangan kota modern menjadikan Pekanbaru memiliki karakter yang kuat melalui perpaduan budaya, ekonomi, dan dinamika perkotaan.',
                 'map_pin_x' => 50,
                 'map_pin_y' => 40,
                 'trilogies' => [
@@ -941,6 +975,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 20 - Banjarmasin',
                 'city_name' => 'Banjarmasin',
                 'region' => 'Kalimantan Selatan',
+                'desc1' => 'Banjarmasin merupakan ibu kota Provinsi Kalimantan Selatan yang dikenal sebagai kota seribu sungai, dengan kehidupan masyarakat yang sangat erat dengan aliran sungai. Sungai Martapura dan Sungai Barito menjadi pusat aktivitas utama, sementara pasar terapung menjadi ikon khas yang mencerminkan tradisi perdagangan yang telah berlangsung sejak lama.',
+                'desc2' => 'Selain itu, Banjarmasin memiliki kekayaan budaya yang kuat, terutama dari masyarakat Banjar yang masih menjaga tradisi dan nilai lokal. Kuliner khas seperti soto Banjar dan berbagai hidangan berbasis ikan turut memperkuat identitas kota ini, menjadikannya memiliki karakter unik melalui perpaduan budaya sungai, tradisi, dan aktivitas ekonomi.',
                 'map_pin_x' => 54.7,
                 'map_pin_y' => 86,
                 'trilogies' => [
@@ -981,6 +1017,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 21 - Palu',
                 'city_name' => 'Palu',
                 'region' => 'Sulawesi Tengah',
+                'desc1' => 'Palu merupakan ibu kota Provinsi Sulawesi Tengah yang dikenal dengan kondisi geografis unik karena berada di wilayah lembah yang diapit pegunungan dan teluk, yaitu Teluk Palu. Kota ini berperan sebagai pusat pemerintahan, perdagangan, dan aktivitas ekonomi di wilayah Sulawesi Tengah, dengan perkembangan kota yang terus berlangsung.',
+                'desc2' => 'Selain itu, Palu memiliki kekayaan budaya yang mencerminkan keberagaman masyarakatnya, termasuk tradisi lokal yang masih dijaga hingga kini. Keindahan alam seperti pantai, teluk, dan pegunungan di sekitarnya menjadi daya tarik tersendiri, menjadikan Palu memiliki karakter kuat melalui perpaduan alam, budaya, dan dinamika kehidupan masyarakat.',
                 'map_pin_x' => 42,
                 'map_pin_y' => 42,
                 'trilogies' => [
@@ -1036,6 +1074,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 22 - Jayapura',
                 'city_name' => 'Jayapura',
                 'region' => 'Papua',
+                'desc1' => 'Jayapura merupakan salah satu kota di Provinsi Papua yang berperan sebagai pusat pemerintahan, ekonomi, dan aktivitas utama di kawasan timur Indonesia. Kota ini memiliki letak geografis yang unik dengan perpaduan antara wilayah pesisir, perbukitan, dan teluk yang indah, menjadikan lanskapnya sangat khas. Teluk Youtefa serta Jembatan Youtefa menjadi ikon penting yang memperkuat identitas Jayapura sebagai kota dengan panorama alam yang menonjol.',
+                'desc2' => 'Selain itu, Jayapura memiliki keberagaman budaya yang kuat dengan masyarakat yang terdiri dari berbagai suku asli Papua serta pendatang. Kehidupan sosial yang dinamis, tradisi yang masih terjaga, serta aktivitas perdagangan yang berkembang menjadikan kota ini terus tumbuh. Keindahan alam, kekayaan budaya, dan perkembangan kota yang berkelanjutan menjadikan Jayapura memiliki karakter yang kuat sebagai salah satu wilayah penting di Indonesia timur.',
                 'map_pin_x' => 53,
                 'map_pin_y' => 37,
                 'trilogies' => [
@@ -1076,6 +1116,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 23 - Sorong',
                 'city_name' => 'Sorong',
                 'region' => 'Papua Barat Daya',
+                'desc1' => 'Sorong merupakan salah satu kota di Provinsi Papua Barat Daya yang dikenal sebagai pusat ekonomi, industri, dan transportasi di kawasan barat Papua. Kota ini memiliki peran strategis sebagai pintu gerbang utama menuju berbagai destinasi di wilayah Papua, dengan aktivitas pelabuhan dan distribusi yang sangat penting bagi pergerakan barang dan manusia.',
+                'desc2' => 'Selain itu, Sorong memiliki kedekatan dengan kawasan wisata dunia seperti Raja Ampat yang menjadikannya titik awal perjalanan wisata bahari. Keberagaman masyarakat, perkembangan kota yang pesat, serta kekayaan kuliner lokal turut memperkuat identitasnya, menjadikan Sorong memiliki karakter kuat melalui perpaduan aktivitas ekonomi, posisi strategis, dan akses menuju keindahan alam.',
                 'map_pin_x' => 23,
                 'map_pin_y' => 25,
                 'trilogies' => [
@@ -1121,6 +1163,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 24 - Merauke',
                 'city_name' => 'Merauke',
                 'region' => 'Papua Selatan',
+                'desc1' => 'Merauke merupakan salah satu kota di Provinsi Papua Selatan yang dikenal sebagai wilayah paling timur Indonesia dengan peran penting dalam konteks geografis dan nasional. Kota ini memiliki lanskap yang khas berupa dataran luas dan savana, berbeda dengan wilayah Papua lainnya, serta menjadi bagian dari identitas perbatasan Indonesia dengan Papua Nugini.',
+                'desc2' => 'Selain itu, Merauke memiliki kekayaan budaya dari masyarakat lokal seperti suku Marind yang masih menjaga tradisi dan nilai adat. Aktivitas pertanian dan kehidupan masyarakat yang sederhana berpadu dengan kekayaan kuliner lokal, menjadikan Merauke memiliki karakter unik melalui perpaduan budaya, alam, dan posisinya sebagai wilayah timur Indonesia.',
                 'map_pin_x' => 53,
                 'map_pin_y' => 73,
                 'trilogies' => [
@@ -1166,6 +1210,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 25 - Palangka Raya',
                 'city_name' => 'Palangka Raya',
                 'region' => 'Kalimantan Tengah',
+                'desc1' => 'Palangka Raya merupakan ibu kota Provinsi Kalimantan Tengah yang dikenal sebagai pusat pemerintahan dan perkembangan wilayah dengan tata kota yang luas dan terencana. Kota ini memiliki karakter khas dengan lingkungan yang masih didominasi hutan tropis serta Sungai Kahayan yang menjadi bagian penting dalam kehidupan masyarakat.',
+                'desc2' => 'Selain itu, Palangka Raya mencerminkan kekayaan budaya masyarakat Dayak yang masih terjaga dalam tradisi dan kehidupan sehari-hari. Perpaduan antara alam, budaya lokal, dan perkembangan kota menjadikan Palangka Raya memiliki karakter yang unik sebagai wilayah yang terus berkembang di tengah lingkungan alami yang kuat.',
                 'map_pin_x' => 52,
                 'map_pin_y' => 78,
                 'trilogies' => [
@@ -1206,6 +1252,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 26 - Nusa Tenggara Barat',
                 'city_name' => 'NTB',
                 'region' => 'NTB',
+                'desc1' => 'Nusa Tenggara Barat merupakan salah satu provinsi di Indonesia yang dikenal dengan kekayaan alam, budaya, dan pariwisatanya, dengan Pulau Lombok sebagai pusat daya tarik utama. Destinasi seperti Pantai Senggigi, Gili Trawangan, Pantai Selong Belanak, serta Gunung Rinjani mencerminkan keberagaman lanskap yang menjadikan Lombok representasi utama keindahan NTB di tingkat nasional dan internasional.',
+                'desc2' => 'Di sisi budaya, tradisi masyarakat suku Sasak masih terjaga melalui desa adat seperti Desa Sade serta tradisi Peresean dan Festival Bau Nyale. NTB juga dikenal dengan identitas religius melalui Masjid Islamic Center di Mataram serta kuliner khas seperti Ayam Taliwang dan Sate Rembiga, menjadikannya wilayah dengan perpaduan kuat antara alam, budaya, dan cita rasa lokal.',
                 'map_pin_x' => 30,
                 'map_pin_y' => 50,
                 'trilogies' => [
@@ -1266,6 +1314,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 27 - Nusa Tenggara Timur',
                 'city_name' => 'NTT',
                 'region' => 'NTT',
+                'desc1' => 'Nusa Tenggara Timur merupakan wilayah yang dikenal sebagai habitat komodo, dengan Taman Nasional Komodo sebagai pusat utama yang mencakup Pulau Komodo, Pulau Rinca, dan Pulau Padar, serta Labuan Bajo sebagai gerbang wisata. Keberadaan satwa purba ini berpadu dengan lanskap alam yang dramatis, menjadikan wilayah ini memiliki daya tarik global yang khas.',
+                'desc2' => 'Selain itu, NTT memiliki keindahan alam beragam seperti Danau Kelimutu dengan tiga warna airnya dan bentang alam Flores yang eksotis. Tradisi masyarakat tetap terjaga melalui kampung adat seperti Wae Rebo dan tenun ikat yang sarat makna, menjadikan wilayah ini memiliki karakter kuat melalui perpaduan alam, budaya, dan ikon komodo yang mendunia.',
                 'map_pin_x' => 48,
                 'map_pin_y' => 50,
                 'trilogies' => [
@@ -1311,6 +1361,8 @@ class StageSeeder extends Seeder
                 'name' => 'Stage 28 - Banda Aceh',
                 'city_name' => 'Banda Aceh',
                 'region' => 'Aceh',
+                'desc1' => 'Banda Aceh merupakan ibu kota Provinsi Aceh yang dikenal sebagai pusat pemerintahan, pendidikan, dan kebudayaan di ujung barat Indonesia. Kota ini memiliki sejarah panjang sebagai wilayah penting dalam perdagangan dan penyebaran Islam, yang tercermin dari berbagai peninggalan sejarah serta kehidupan masyarakat yang religius dan berlandaskan nilai syariat.',
+                'desc2' => 'Selain itu, Banda Aceh juga dikenal sebagai kota yang kuat dalam proses pemulihan dan pembangunan pasca bencana tsunami 2004, dengan berbagai monumen dan situs peringatan yang menjadi bagian dari identitasnya. Keberagaman budaya Aceh, arsitektur khas, serta kuliner tradisional seperti mie Aceh menjadikan kota ini memiliki karakter kuat melalui perpaduan sejarah, religi, dan ketahanan masyarakat.',
                 'map_pin_x' => 30,
                 'map_pin_y' => 15,
                 'trilogies' => [
