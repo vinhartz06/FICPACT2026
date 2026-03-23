@@ -42,7 +42,6 @@
                         linear-gradient(180deg, #2a2420 0%, #1a1816 100%);
             color: #FCE6C4;
         }
-        /* Pin pakai % relatif #island-map; JS isi dari kotak gambar ter-render (bukan area kosong letterbox) */
         .stage-pin {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -106,35 +105,39 @@
 </head>
 <body class="min-h-dvh bg-gradient-to-br from-[#1E2A2A] via-[#2F2A24] to-[#4A2F1D] text-[#FCE6C4] flex flex-col">
 
-    <!-- NAVBAR — responsive with mobile-optimized layout -->
+    <!-- NAVBAR: below 1000px -> emoji only, no Trilogi Nusantara text -->
     <nav class="relative shrink-0 w-full px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between
                 backdrop-blur-md bg-black/20 border-b border-white/10 min-h-[3rem] sm:min-h-[3.25rem]">
+        
+        <!-- Left buttons: emoji only on mobile, emoji + text above 1000px -->
         <div class="flex items-center gap-1 sm:gap-2 shrink-0 relative z-10 flex-wrap">
             <a href="{{ url('/') }}" title="Beranda"
-               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+               class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
                 <span class="text-sm sm:text-xl" aria-hidden="true">🏠</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Beranda</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Beranda</span>
             </a>
             <a href="{{ route('game') }}" title="Kembali ke peta pulau"
-               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+               class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
                 <span class="text-xs sm:text-base" aria-hidden="true">🗺</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Peta</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Peta</span>
             </a>
             <button type="button" id="nav-logout" title="Keluar"
-                    class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
+                    class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all backdrop-blur-sm border border-white/10 cursor-pointer">
                 <span class="text-xs sm:text-lg" aria-hidden="true">🚪</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Keluar</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Keluar</span>
             </button>
         </div>
 
-        <!-- Game Title — hidden on mobile, visible on tablet/desktop -->
+        <!-- Game Title: hidden below 1000px, visible above -->
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                   hidden sm:block text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
+                   text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
                    max-w-[calc(100vw-10rem)] sm:max-w-[calc(100vw-14rem)] md:max-w-none leading-tight
-                   bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A] bg-clip-text text-transparent drop-shadow-md">
+                   bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A] bg-clip-text text-transparent drop-shadow-md"
+            style="display: none;">
             Trilogi Nusantara
         </h1>
 
+        <!-- Empty spacer (no leaderboard on this page) -->
         <div class="w-8 sm:w-10 md:w-16 shrink-0 relative z-10" aria-hidden="true"></div>
     </nav>
 
@@ -155,7 +158,7 @@
             </p>
         </header>
 
-        {{-- Peta selalu tampil (seperti Jawa); pesan kosong hanya jika belum ada stage di DB --}}
+        {{-- Peta selalu tampil --}}
         <div class="w-full max-w-6xl mx-auto flex-1 flex flex-col min-h-0">
             <div class="island-map-stage mx-auto w-full" id="island-map" role="img" aria-label="Peta {{ $islandTitle }}">
                 <div class="map-layer {{ $islandMapUrl ? '' : 'is-fallback' }}">
@@ -259,19 +262,16 @@
                 document.body.style.overflow = '';
             }
 
-            // Close modal on button click
             if (modalCloseBtn) {
                 modalCloseBtn.addEventListener('click', closeModal);
             }
 
-            // Close modal when clicking outside the modal content
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
 
-            // Attach event listeners to all info buttons
             const infoButtons = document.querySelectorAll('.info-button');
             infoButtons.forEach(btn => {
                 btn.addEventListener('click', function(e) {
@@ -283,7 +283,6 @@
                 });
             });
 
-            // Optional: close on Escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
                     closeModal();
@@ -305,6 +304,27 @@
         }
         .animate-fade-in-up {
             animation: fade-in-up 0.2s ease-out forwards;
+        }
+
+        /* BELOW 1000px: hide Trilogi Nusantara title, buttons emoji only */
+        @media (max-width: 1000px) {
+            nav h1 {
+                display: none !important;
+            }
+            /* Ensure text labels are hidden */
+            nav .group span:not([aria-hidden="true"]) {
+                display: none !important;
+            }
+        }
+
+        /* ABOVE 1000px: show Trilogi Nusantara title and button text */
+        @media (min-width: 1001px) {
+            nav h1 {
+                display: block !important;
+            }
+            nav .group span:not([aria-hidden="true"]) {
+                display: inline-block !important;
+            }
         }
     </style>
 

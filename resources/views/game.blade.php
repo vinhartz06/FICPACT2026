@@ -71,50 +71,51 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
     </div>
 
-    <!-- NAVBAR — responsive with mobile-optimized layout -->
+    <!-- NAVBAR: below 1000px -> emoji only, no Trilogi Nusantara text -->
     <nav class="relative shrink-0 w-full px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between 
                 backdrop-blur-md bg-black/20 border-b border-white/10
                 transition-all duration-300 min-h-[3rem] sm:min-h-[3.25rem]">
         
-        <!-- Kembali ke landing + Profil + Keluar - responsive sizing -->
+        <!-- Left buttons: emoji only on mobile, emoji + text above 1000px -->
         <div class="flex items-center gap-1 sm:gap-2 shrink-0 relative z-10">
             <a href="{{ url('/') }}" title="Kembali ke halaman utama"
-               class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+               class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                       bg-white/5 hover:bg-white/20 transition-all 
                       backdrop-blur-sm border border-white/10">
                 <span class="text-base sm:text-xl drop-shadow-sm" aria-hidden="true">🏠</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Beranda</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Beranda</span>
             </a>
-            <a href="#" id="nav-profil" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+            <a href="#" id="nav-profil" class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                               bg-white/5 hover:bg-white/20 transition-all 
                               backdrop-blur-sm border border-white/10">
-                <span class="text-base sm:text-xl drop-shadow-sm">👤</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Profil</span>
+                <span class="text-base sm:text-xl drop-shadow-sm" aria-hidden="true">👤</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Profil</span>
             </a>
             <button type="button" id="nav-logout" title="Keluar dari akun / kembali ke beranda"
-                    class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
+                    class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl 
                            bg-white/5 hover:bg-red-500/25 hover:border-red-400/40 transition-all 
                            backdrop-blur-sm border border-white/10 cursor-pointer">
                 <span class="text-sm sm:text-lg drop-shadow-sm" aria-hidden="true">🚪</span>
-                <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Keluar</span>
+                <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Keluar</span>
             </button>
         </div>
 
-        <!-- Game Title — hidden on mobile, visible on tablet/desktop -->
+        <!-- Game Title: hidden below 1000px, visible above -->
         <h1 class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                   hidden sm:block text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
+                   text-center text-sm sm:text-xl md:text-2xl font-extrabold tracking-tight px-2
                    max-w-[calc(100vw-9.5rem)] sm:max-w-[calc(100vw-12rem)] md:max-w-none leading-tight
                    bg-gradient-to-r from-[#F7D98C] via-[#E6B567] to-[#CF9F4A]
-                   bg-clip-text text-transparent drop-shadow-md">
+                   bg-clip-text text-transparent drop-shadow-md"
+            style="display: none;">
             Trilogi Nusantara
         </h1>
 
-        <!-- Leaderboard - responsive sizing -->
-        <a href="#" id="nav-leaderboard" class="group flex items-center justify-center gap-0 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shrink-0 relative z-10
+        <!-- Leaderboard - emoji only below 1000px -->
+        <a href="#" id="nav-leaderboard" class="group flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shrink-0 relative z-10
                           bg-white/5 hover:bg-white/20 transition-all 
                           backdrop-blur-sm border border-white/10">
-            <span class="text-sm sm:text-base drop-shadow">🏆</span>
-            <span class="hidden sm:inline text-xs sm:text-sm font-medium text-[#F2E0C9]">Leaderboard</span>
+            <span class="text-sm sm:text-base drop-shadow" aria-hidden="true">🏆</span>
+            <span class="text-xs sm:text-sm font-medium text-[#F2E0C9] ml-1 hidden" style="display: none;">Leaderboard</span>
         </a>
     </nav>
 
@@ -161,16 +162,32 @@
 
         <!-- subtle decorative footer -->
         <div class="shrink-0 flex justify-center gap-3 mt-2 text-amber-200/40 text-xs font-medium">
-            {{-- <span>✦ warisan budaya ✦</span>
-            <span class="hidden sm:inline">•</span>
-            <span class="hidden sm:inline">jelajahi nusantara</span>
-            <span class="hidden sm:inline">•</span> --}}
             <span>© 2026 Trilogi Nusantara</span>
         </div>
     </main>
 
-    <!-- responsive adjustments for perfect fit -->
     <style>
+        /* BELOW 1000px: hide Trilogi Nusantara title, buttons emoji only */
+        @media (max-width: 1000px) {
+            .navbar-title {
+                display: none !important;
+            }
+            /* Ensure text labels are hidden */
+            nav .group span:not([aria-hidden="true"]) {
+                display: none !important;
+            }
+        }
+
+        /* ABOVE 1000px: show Trilogi Nusantara title and button text */
+        @media (min-width: 1001px) {
+            h1 {
+                display: block !important;
+            }
+            nav .group span:not([aria-hidden="true"]) {
+                display: inline-block !important;
+            }
+        }
+
         /* desktop: no scroll, image scaling perfect */
         @media (min-width: 1024px) {
             body {
