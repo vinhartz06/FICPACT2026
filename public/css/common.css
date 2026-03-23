@@ -1,0 +1,27 @@
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg-dark:#020617;--bg-darker:#0f172a;--bg-card:#1e293b;--text-primary:#e5e7eb;--text-secondary:#9ca3af;--accent-blue:#3b82f6;--accent-purple:#7c3aed;--accent-green:#22c55e;--accent-green-light:#4ade80;--accent-red:#ef4444;--accent-yellow:#eab308}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,var(--bg-darker),var(--bg-dark));color:var(--text-primary);min-height:100vh}
+.btn{padding:12px 24px;border-radius:8px;border:none;font-weight:600;font-size:1rem;cursor:pointer;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.btn:hover:not(:disabled){transform:translateY(-2px)}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--accent-green),var(--accent-green-light));color:#052e16}
+.btn-primary:hover:not(:disabled){box-shadow:0 8px 20px rgba(34,197,94,0.4)}
+.btn-secondary{background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));color:white}
+.btn-secondary:hover:not(:disabled){box-shadow:0 8px 20px rgba(59,130,246,0.4)}
+.btn-small{padding:6px 12px;font-size:0.85rem}
+.btn-full{width:100%}
+.hidden{display:none!important}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;display:flex;align-items:center;justify-content:center}
+.modal-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px)}
+.modal-content{position:relative;background:var(--bg-card);padding:32px;border-radius:16px;max-width:400px;width:90%;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;color:var(--text-secondary);cursor:pointer}
+.modal-close:hover{color:var(--text-primary)}
+.modal-buttons{display:flex;gap:12px;margin-top:24px}
+.modal-buttons .btn{flex:1}
+.error-msg{color:var(--accent-red);font-size:0.9rem;margin-top:8px}
+.form-group{margin-bottom:16px;text-align:left}
+.form-group label{display:block;margin-bottom:6px;font-size:0.9rem;color:var(--text-secondary)}
+.form-group input{width:100%;padding:12px;border:2px solid #374151;border-radius:8px;background:var(--bg-darker);color:var(--text-primary);font-size:1rem}
+.form-group input:focus{outline:none;border-color:var(--accent-blue)}
+.form-group input::placeholder{color:#6b7280}
+
