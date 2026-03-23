@@ -8,9 +8,13 @@ function authJsonHeaders() {
   return h;
 }
 
-/** Tiap ronde: maksimal 4 trilogi = 12 kartu, grid 4 kolom × 3 baris. */
+/** Tiap ronde: maksimal 4 trilogi = 12 kartu */
 var TRILOGIES_PER_ROUND = 4;
-var GRID_COLS = 4;
+
+/** Kembalikan jumlah kolom grid sesuai lebar layar saat ini. */
+function getGridCols() {
+  return window.innerWidth >= 769 ? 4 : 3;
+}
 
 /** URL dashboard Blade (Pilih Pulau). */
 function getDashboardUrl() {
@@ -94,6 +98,7 @@ function shuffle(array) {
 
 function renderBoard() {
   boardEl.innerHTML = '';
+  /* Let CSS handle grid-template-columns — do NOT set inline style here */
   cards.forEach(function(card) {
     var div = document.createElement('button');
     div.className = 'card face-down';
@@ -316,11 +321,12 @@ startBtn.addEventListener('click', async function() {
     cards = shuffle(flatCards);
     timeLeft = 60;
     updateStatus();
-    boardEl.style.gridTemplateColumns = 'repeat(' + GRID_COLS + ', minmax(0, 1fr))';
+
+    /* Resolve responsive column count and update stage info label */
+    var gridCols = getGridCols();
     if (stageData) {
       var nTri = cards.length / 3;
-      var rows = Math.ceil(cards.length / GRID_COLS) || 1;
-      /* Tampil baris×kolom (3×4 = 3 baris, 4 kolom untuk 12 kartu) */
+      var rows = Math.ceil(cards.length / gridCols) || 1;
       stageInfo.textContent =
         'Stage ' +
         stageData.stage_number +
@@ -331,11 +337,12 @@ startBtn.addEventListener('click', async function() {
         ' · Grid ' +
         rows +
         '×' +
-        GRID_COLS +
+        gridCols +
         ' · ' +
         nTri +
         ' trilogi';
     }
+
     renderBoard();
     startTimer();
     messageEl.textContent = 'Cari kombinasi Trilogi yang tepat!';
@@ -375,4 +382,3 @@ btnNextStage.addEventListener('click', async function() {
 initGame().catch(function(e) {
   console.error(e);
 });
-

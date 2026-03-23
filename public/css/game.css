@@ -74,7 +74,6 @@ body {
 .grid {
   margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -82,7 +81,6 @@ body {
 button.card {
   position: relative;
   padding: 10px;
-  min-height: 120px;
   border-radius: 16px;
   cursor: pointer;
   display: flex;
@@ -127,7 +125,6 @@ button.card:hover:not(.matched):not(.disabled) {
 
 .card .card-image img {
   max-width: 100%;
-  max-height: 90px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--map-border);
@@ -285,11 +282,149 @@ button.card.disabled {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
-@media (max-width: 600px) {
+/* ========== RESPONSIVE CARDS ========== */
+
+/* BASE (mobile-first): 3 col x 4 row */
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+button.card {
+  aspect-ratio: 4 / 3;
+  min-height: unset;
+  padding: 8px;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Image fills card, natural aspect ratio preserved via object-contain */
+.card .card-image {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid var(--map-border);
+}
+
+.card .card-text {
+  flex: 1;
+  width: 100%;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  padding: 2px 4px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.card.face-down::after {
+  font-size: 1.6rem;
+}
+
+/* Desktop: 4 col x 3 row */
+@media (min-width: 769px) {
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
   }
+
   button.card {
-    min-height: 100px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .card .card-text {
+    font-size: 0.88rem;
+    line-height: 1.35;
+    padding: 4px 6px;
+  }
+
+  button.card.face-down::after {
+    font-size: 2rem;
+  }
+}
+
+/* Compact mobile */
+@media (max-width: 550px) {
+  .app {
+    padding: 14px;
+  }
+
+  .grid {
+    gap: 8px;
+  }
+
+  button.card {
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .card .card-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    padding: 2px 3px;
+  }
+
+  button.card.face-down::after {
+    font-size: 1.4rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 450px) {
+  .grid {
+    gap: 6px;
+  }
+
+  button.card {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .card .card-text {
+    font-size: 0.62rem;
+    line-height: 1.15;
+    padding: 2px;
+  }
+
+  button.card.face-down::after {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .grid {
+    gap: 5px;
+  }
+
+  button.card {
+    padding: 4px;
+    border-radius: 7px;
+  }
+
+  .card .card-text {
+    font-size: 0.56rem;
+    line-height: 1.1;
+    padding: 1px 2px;
+  }
+
+  button.card.face-down::after {
+    font-size: 1rem;
   }
 }
