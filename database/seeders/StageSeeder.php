@@ -1028,7 +1028,7 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Lanskap Kota'],
                     ],
                     'Ikon Kota (Jembatan Palu)' => [
-                        ['type' => 'image', 'content' => 'jembatan-palu.jpeg'],
+                        ['type' => 'image', 'content' => 'jembatan-palu.jpg'],
                         ['type' => 'text', 'content' => 'Jembatan Palu'],
                         ['type' => 'text', 'content' => 'Ikon Kota'],
                     ],
@@ -1038,7 +1038,7 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Pantai Kota'],
                     ],
                     'Pegunungan (Gunung Gawalise)' => [
-                        ['type' => 'image', 'content' => 'gunung-gawalise.jpeg'],
+                        ['type' => 'image', 'content' => 'gunung-gawalise.jpg'],
                         ['type' => 'text', 'content' => 'Gawalise'],
                         ['type' => 'text', 'content' => 'Pegunungan'],
                     ],
@@ -1122,12 +1122,12 @@ class StageSeeder extends Seeder
                 'map_pin_y' => 25,
                 'trilogies' => [
                     'Pantai Pasir Putih (Pantai Tanjung Kasuari)' => [
-                        ['type' => 'image', 'content' => 'pantai-tanjung-kasuari.png'],
+                        ['type' => 'image', 'content' => 'pantai-tanjung-kasuari.jpg'],
                         ['type' => 'text', 'content' => 'Pantai Tanjung Kasuari'],
                         ['type' => 'text', 'content' => 'Pantai Pasir Putih'],
                     ],
                     'Surga Laut (Raja Ampat)' => [
-                        ['type' => 'image', 'content' => 'raja-ampat.png'],
+                        ['type' => 'image', 'content' => 'raja-ampat.jpg'],
                         ['type' => 'text', 'content' => 'Raja Ampat'],
                         ['type' => 'text', 'content' => 'Surga Laut'],
                     ],
@@ -1182,11 +1182,6 @@ class StageSeeder extends Seeder
                         ['type' => 'image', 'content' => 'sungai-maro.jpg'],
                         ['type' => 'text', 'content' => 'Sungai Maro'],
                         ['type' => 'text', 'content' => 'Sungai Besar'],
-                    ],
-                    'Danau Rawa (Rawa Biru)' => [
-                        ['type' => 'image', 'content' => 'rawa-biru.jpg'],
-                        ['type' => 'text', 'content' => 'Rawa Biru'],
-                        ['type' => 'text', 'content' => 'Danau Rawa'],
                     ],
                     'Simbol NKRI (Sabang Merauke)' => [
                         ['type' => 'image', 'content' => 'tugu-sabang-merauke.jpg'],
@@ -1278,34 +1273,29 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Desa Adat Suku Sasak'],
                     ],
                     'Tradisi Duel (Peresean)' => [
-                        ['type' => 'image', 'content' => 'peresean.png'],
+                        ['type' => 'image', 'content' => 'peresean.jpg'],
                         ['type' => 'text', 'content' => 'Peresean'],
                         ['type' => 'text', 'content' => 'Tradisi Duel'],
                     ],
                     'Festival Laut (Bau Nyale)' => [
-                        ['type' => 'image', 'content' => 'bau-nyale.png'],
+                        ['type' => 'image', 'content' => 'bau-nyale.jpg'],
                         ['type' => 'text', 'content' => 'Bau Nyale'],
                         ['type' => 'text', 'content' => 'Festival Laut'],
                     ],
                     'Ikon Mataram (Masjid Islamic Center)' => [
-                        ['type' => 'image', 'content' => 'masjid-islamic-center.jpeg'],
+                        ['type' => 'image', 'content' => 'masjid-islamic-center.jpg'],
                         ['type' => 'text', 'content' => 'Masjid'],
                         ['type' => 'text', 'content' => 'Ikon Mataram'],
                     ],
                     'Bakar Pedas (Ayam Taliwang)' => [
-                        ['type' => 'image', 'content' => 'ayam-taliwang.jpeg'],
-                        ['type' => 'text', 'content' => 'Ayam'],
+                        ['type' => 'image', 'content' => 'ayam-taliwang.jpg'],
+                        ['type' => 'text', 'content' => 'Ayam Taliwang'],
                         ['type' => 'text', 'content' => 'Bakar Pedas'],
                     ],
                     'Pedas Khas (Sate Rembiga)' => [
-                        ['type' => 'image', 'content' => 'sate-rembiga.jpeg'],
-                        ['type' => 'text', 'content' => 'Daging'],
+                        ['type' => 'image', 'content' => 'sate-rembiga.jpg'],
+                        ['type' => 'text', 'content' => 'Sate Rembiga'],
                         ['type' => 'text', 'content' => 'Pedas Khas'],
-                    ],
-                    'Ombak Surfing (Pantai Selong Belanak)' => [
-                        ['type' => 'image', 'content' => 'pantai-selong-belanak.jpg'],
-                        ['type' => 'text', 'content' => 'Pantai'],
-                        ['type' => 'text', 'content' => 'Ombak Surfing'],
                     ],
                 ],
             ],
@@ -1325,7 +1315,7 @@ class StageSeeder extends Seeder
                         ['type' => 'text', 'content' => 'Taman Nasional'],
                     ],
                     'Gerbang Wisata (Labuan Bajo)' => [
-                        ['type' => 'image', 'content' => 'labuan-bajo.jpeg'],
+                        ['type' => 'image', 'content' => 'labuan-bajo.jpg'],
                         ['type' => 'text', 'content' => 'Labuan Bajo'],
                         ['type' => 'text', 'content' => 'Gerbang Wisata'],
                     ],
@@ -1367,33 +1357,33 @@ class StageSeeder extends Seeder
                 'map_pin_y' => 15,
                 'trilogies' => [
                     'Trilogi Masjid Ikonik (Masjid Raya Baiturrahman)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-masjid-baiturrahman.jpg'],
+                        ['type' => 'image', 'content' => 'masjid-baiturrahman.jpg'],
                         ['type' => 'text', 'content' => 'Masjid Raya Baiturrahman'],
                         ['type' => 'text', 'content' => 'Simbol Ketahanan Aceh'],
                     ],
                     'Trilogi Kapal Apung (PLTD Apung)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-pltd-apung.jpg'],
+                        ['type' => 'image', 'content' => 'pltd-apung.jpg'],
                         ['type' => 'text', 'content' => 'Kapal Apung'],
                         ['type' => 'text', 'content' => 'Monumen Tsunami'],
                     ],
                     'Trilogi Museum Tsunami (Museum Tsunami Aceh)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-museum-tsunami.jpg'],
+                        ['type' => 'image', 'content' => 'museum-tsunami.jpg'],
                         ['type' => 'text', 'content' => 'Museum Tsunami'],
                         ['type' => 'text', 'content' => 'Peringatan Bencana'],
                     ],
                     'Trilogi Kuliner Khas (Mie Aceh)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-mie-aceh.jpg'],
+                        ['type' => 'image', 'content' => 'mie-aceh.jpg'],
                         ['type' => 'text', 'content' => 'Mie Aceh'],
                         ['type' => 'text', 'content' => 'Pedas Gurih'],
                     ],
                     'Trilogi Kopi Legendaris (Kopi Aceh)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-kopi-aceh.jpg'],
+                        ['type' => 'image', 'content' => 'kopi-gayo.jpg'],
                         ['type' => 'text', 'content' => 'Kopi Aceh'],
                         ['type' => 'text', 'content' => 'Kopi Gayo'],
                     ],
-                    'Trilogi Sejarah Perjuangan (Kherkof)' => [
-                        ['type' => 'image', 'content' => 'banda-aceh-kherkof.jpg'],
-                        ['type' => 'text', 'content' => 'Kherkof'],
+                    'Trilogi Sejarah Perjuangan' => [
+                        ['type' => 'image', 'content' => 'kerkhof.jpg'],
+                        ['type' => 'text', 'content' => 'Kerkhof Peucut'],
                         ['type' => 'text', 'content' => 'Makam Pahlawan'],
                     ],
                 ],
