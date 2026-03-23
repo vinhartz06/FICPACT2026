@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trilogi Nusantara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Trilogi Nusantara | Permainan Memori Nusantara</title>
     @vite(['resources/css/app.css'])
     <style>
         * {
@@ -53,11 +53,6 @@
             75% { transform: translate(30px, 30px) scale(1.05); }
         }
 
-        @keyframes card-flip {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(180deg); }
-        }
-
         @keyframes shimmer {
             0% { background-position: -1000px 0; }
             100% { background-position: 1000px 0; }
@@ -66,11 +61,6 @@
         @keyframes bounce-icon {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
-        }
-
-        @keyframes parallax-bg {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(50px); }
         }
 
         body {
@@ -96,7 +86,6 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* Foto: taruh di public/images/indonesia.jpg — overlay gelap supaya teks hero tetap jelas. */
             background-image:
                 linear-gradient(180deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 46, 0.5) 50%, rgba(10, 14, 39, 0.55) 100%),
                 url('{{ asset("images/indonesia.jpg") }}');
@@ -176,7 +165,7 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 10vw, 7rem);
+            font-size: clamp(2.5rem, 10vw, 7rem);
             font-weight: 900;
             background: linear-gradient(135deg, #FFD700, #FFA500, #FF6B6B, #D4A017);
             -webkit-background-clip: text;
@@ -184,17 +173,16 @@
             background-clip: text;
             margin-bottom: 20px;
             text-shadow: 0 0 30px rgba(212, 160, 23, 0.3);
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             line-height: 1.2;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            font-size: clamp(1rem, 4vw, 1.5rem);
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 40px;
             font-weight: 300;
             letter-spacing: 0.5px;
-            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-cta {
@@ -202,12 +190,11 @@
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1.4s ease-out;
         }
 
         .btn {
-            padding: 14px 40px;
-            font-size: 1.1rem;
+            padding: 12px 32px;
+            font-size: 1rem;
             font-weight: 700;
             border: none;
             border-radius: 50px;
@@ -277,26 +264,9 @@
             box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .scroll-indicator svg {
-            width: 30px;
-            height: 30px;
-            stroke: rgba(212, 160, 23, 0.6);
-            fill: none;
-            stroke-width: 2;
-        }
-
         .preview-section {
             position: relative;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -319,7 +289,7 @@
         }
 
         .preview-container {
-            max-width: 900px;
+            max-width: 1200px;
             width: 100%;
             position: relative;
             z-index: 5;
@@ -330,17 +300,69 @@
             font-weight: 800;
             color: #FFD700;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             text-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
         }
 
+        /* RESPONSIVE LAYOUT: STEPS ON TOP, CARDS BELOW ON MOBILE */
+        .gameplay-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .steps-wrapper {
+            flex: 1;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        .game-grid-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            color: #FFD700;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .step-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* SMALLER BOXES - REDUCED SIZE */
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
             perspective: 1000px;
+            max-width: 360px;
+            width: 100%;
         }
 
         .game-card {
@@ -351,20 +373,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.6rem;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            animation: float 6s ease-in-out infinite;
             flex-direction: column;
-            gap: 8px;
+            gap: 4px;
         }
 
         .game-card.text-card {
             background: linear-gradient(135deg, rgba(212, 160, 23, 0.15), rgba(193, 68, 14, 0.15));
-            padding: 12px;
+            padding: 8px;
         }
 
         .game-card.image-card {
@@ -380,7 +401,7 @@
         }
 
         .card-text {
-            font-size: 0.85rem;
+            font-size: clamp(0.65rem, 2.5vw, 0.75rem);
             color: rgba(255, 255, 255, 0.9);
             text-align: center;
             font-weight: 600;
@@ -388,19 +409,10 @@
             line-height: 1.2;
         }
 
-        .game-card:nth-child(odd) {
-            animation-delay: 0.5s;
-        }
-
         .game-card:hover {
             transform: rotateY(15deg) translateZ(20px) scale(1.05);
             box-shadow: 0 10px 40px rgba(212, 160, 23, 0.4), inset 0 0 20px rgba(212, 160, 23, 0.1);
             border-color: rgba(212, 160, 23, 0.6);
-        }
-
-        .game-card.matched {
-            background: linear-gradient(135deg, rgba(31, 122, 140, 0.4), rgba(193, 68, 14, 0.3));
-            box-shadow: 0 0 30px rgba(31, 122, 140, 0.5);
         }
 
         .game-card::before {
@@ -418,9 +430,10 @@
             left: 100%;
         }
 
+        /* Features Section */
         .features-section {
             position: relative;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -443,7 +456,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(212, 160, 23, 0.2);
             border-radius: 20px;
-            padding: 40px;
+            padding: 40px 30px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
@@ -479,18 +492,6 @@
             animation: bounce-icon 2s ease-in-out infinite;
         }
 
-        .feature-card:nth-child(2) .feature-icon {
-            animation-delay: 0.2s;
-        }
-
-        .feature-card:nth-child(3) .feature-icon {
-            animation-delay: 0.4s;
-        }
-
-        .feature-card:nth-child(4) .feature-icon {
-            animation-delay: 0.6s;
-        }
-
         .feature-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -504,9 +505,10 @@
             line-height: 1.6;
         }
 
+        /* Islands Section */
         .islands-section {
             position: relative;
-            min-height: 120vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -517,8 +519,6 @@
         .islands-container {
             max-width: 1400px;
             width: 100%;
-            position: relative;
-            z-index: 5;
         }
 
         .section-title {
@@ -527,7 +527,6 @@
             color: #FFD700;
             text-align: center;
             margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
         }
 
         .section-subtitle {
@@ -539,12 +538,11 @@
 
         .islands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
         .island-card {
-            group position: relative;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
             border: 2px solid rgba(212, 160, 23, 0.2);
@@ -552,15 +550,14 @@
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
-            height: 400px;
             display: flex;
             flex-direction: column;
         }
 
         .island-card:hover {
             border-color: rgba(212, 160, 23, 0.6);
-            transform: translateY(-20px);
-            box-shadow: 0 30px 60px rgba(193, 68, 14, 0.3), 0 0 40px rgba(212, 160, 23, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(193, 68, 14, 0.3);
         }
 
         .island-header {
@@ -574,29 +571,15 @@
             overflow: hidden;
         }
 
-        .island-header::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
-        .island-card:hover .island-header::after {
-            transform: translateX(100%);
-        }
-
         .island-body {
-            flex: 1;
             padding: 25px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            flex: 1;
         }
 
         .island-name {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #FFD700;
             margin-bottom: 12px;
@@ -604,8 +587,8 @@
 
         .island-desc {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
             flex: 1;
         }
 
@@ -615,8 +598,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
             margin-top: 15px;
+            transition: all 0.3s ease;
         }
 
         .island-card:hover .island-cta {
@@ -632,43 +615,14 @@
             justify-content: center;
             padding: 60px 20px;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            overflow: hidden;
-        }
-
-        .cta-bg-elements {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .cta-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(50px);
-        }
-
-        .cta-blob-1 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(193, 68, 14, 0.2), rgba(212, 160, 23, 0.1));
-            top: -100px;
-            right: -100px;
-        }
-
-        .cta-blob-2 {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(135deg, rgba(31, 122, 140, 0.1), rgba(193, 68, 14, 0.1));
-            bottom: -50px;
-            left: -50px;
         }
 
         .cta-content {
-            position: relative;
-            z-index: 5;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 5;
         }
 
         .cta-title {
@@ -676,14 +630,12 @@
             font-weight: 800;
             color: #FFD700;
             margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
         }
 
         .cta-text {
             color: rgba(255, 255, 255, 0.75);
             font-size: 1.1rem;
             margin-bottom: 40px;
-            line-height: 1.8;
         }
 
         .footer {
@@ -692,7 +644,6 @@
             background: linear-gradient(180deg, #0a0e27 0%, #0a0e27 100%);
             border-top: 1px solid rgba(212, 160, 23, 0.2);
             text-align: center;
-            z-index: 10;
         }
 
         .footer-content {
@@ -712,7 +663,7 @@
 
         .footer-tagline {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 30px;
             font-style: italic;
         }
@@ -721,15 +672,14 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-bottom: 30px;
             flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
         .footer-link {
             color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
         }
 
         .footer-link:hover {
@@ -743,63 +693,152 @@
             border-top: 1px solid rgba(212, 160, 23, 0.1);
         }
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-                letter-spacing: -1px;
+        /* MOBILE RESPONSIVE ADJUSTMENTS */
+        @media (max-width: 992px) {
+            .gameplay-layout {
+                gap: 40px;
             }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-cta {
-                gap: 10px;
-                justify-content: center;
-            }
-
-            .btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-
             .game-grid {
-                grid-template-columns: repeat(3, 1fr);
+                max-width: 320px;
+                gap: 10px;
+            }
+            .game-card {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-cta {
                 gap: 12px;
             }
-
+            .btn {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
+            
+            /* STACK LAYOUT: Steps on top, cards below */
+            .gameplay-layout {
+                flex-direction: column;
+                gap: 50px;
+            }
+            
+            .steps-wrapper {
+                order: 1;
+            }
+            
+            .game-grid-wrapper {
+                order: 2;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .step-item {
+                margin-bottom: 25px;
+            }
+            
+            .step-number {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+            }
+            
+            .step-desc {
+                font-size: 0.85rem;
+            }
+            
+            /* SMALLER BOXES ON MOBILE TOO */
+            .game-grid {
+                max-width: 280px;
+                gap: 8px;
+            }
+            
             .game-card {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
-
+            
+            .card-text {
+                font-size: 0.65rem;
+            }
+            
             .feature-card {
-                padding: 30px;
+                padding: 30px 20px;
             }
-
+            
             .island-card {
-                height: 350px;
+                margin-bottom: 10px;
             }
+            
+            .island-name {
+                font-size: 1.4rem;
+            }
+            
+            .preview-title {
+                margin-bottom: 40px;
+            }
+        }
 
-            .section-title {
+        @media (max-width: 480px) {
+            .game-grid {
+                max-width: 240px;
+                gap: 6px;
+            }
+            
+            .game-card {
+                font-size: 1rem;
+                border-radius: 10px;
+                border-width: 1.5px;
+            }
+            
+            .card-text {
+                font-size: 0.6rem;
+            }
+            
+            .step-number {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+            
+            .step-item {
+                gap: 12px;
+            }
+            
+            .hero-title {
                 font-size: 2rem;
             }
-
-            .footer-links {
-                gap: 20px;
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
             }
+            
+            .btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section (Game Portal Entry) -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="floating-blob blob-1"></div>
         <div class="floating-blob blob-2"></div>
         <div class="floating-blob blob-3"></div>
         <div class="hero-bg"></div>
         <div class="hero-pattern"></div>
-
-        <!-- Glow Dots -->
         <div class="glow-dot"></div>
         <div class="glow-dot"></div>
         <div class="glow-dot"></div>
@@ -811,9 +850,6 @@
                 Jelajahi keindahan Indonesia melalui permainan memori yang seru dan edukatif!
             </p>
             <div class="hero-cta">
-                <!-- <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
-                <a href="#" class="btn btn-secondary">Daftar</a> -->
-                {{-- Mainkan = tamu / lanjut (dicegat landing.js); bukan halaman login --}}
                 <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
                 <a href="{{ route('login') }}" class="btn btn-masuk">Masuk</a>
                 <a href="{{ route('register') }}" class="btn btn-secondary">Daftar</a>
@@ -821,67 +857,65 @@
         </div>
     </section>
 
-    <!-- Game Preview Section -->
+    <!-- Game Preview Section - FULLY RESPONSIVE: text on top, cards below on mobile, SMALLER BOXES -->
     <section class="preview-section">
         <div class="preview-bg-glow"></div>
         <div class="preview-container">
             <h2 class="preview-title">Bagaimana Cara Bermain?</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <!-- Steps -->
-                <div style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">
-                @php
-                    $steps = [
-                        ['number' => 1, 'color' => '#C1440E', 'title' => 'Pilih Pulau', 'desc' => 'Mulai dari Sumatera, Jawa, Bali, Kalimantan, Sulawesi, atau Papua'],
-                        ['number' => 2, 'color' => '#D4A017', 'title' => 'Buka 3 Kartu', 'desc' => 'Buka tiga kartu sekaligus untuk mencari trilogi yang cocok'],
-                        ['number' => 3, 'color' => '#1F7A8C', 'title' => 'Cocokkan Trilogi', 'desc' => 'Tiga kartu berkaitan akan hilang (gambar + nama + deskripsi)'],
-                        ['number' => 4, 'color' => '#FF6B35', 'title' => 'Raih Poin', 'desc' => 'Semakin cepat selesai, semakin banyak poin yang didapat'],
-                    ];
-                @endphp
-
-                @foreach($steps as $step)
-                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-                        <div style="background: {{ $step['color'] }}; color: {{ $step['number'] === 2 ? '#0a0e27' : 'white' }}; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.3rem; flex-shrink: 0;">{{ $step['number'] }}</div>
-                        <div>
-                            <h3 style="color: #FFD700; font-weight: 700; margin-bottom: 8px;">{{ $step['title'] }}</h3>
-                            <p>{{ $step['desc'] }}</p>
-                        </div>
-                    </div>
-                @endforeach
-                </div>
-
-                <!-- Game Grid -->
-                <div class="game-grid">
+            <div class="gameplay-layout">
+                <!-- Steps (text) - will be on top for mobile -->
+                <div class="steps-wrapper">
                     @php
-                        $gameCards = [
-                            ['type' => 'image', 'src' => asset('images/trilogi/lawangsewu.jpg')],
-                            ['type' => 'default', 'text' => '?'],
-                            ['type' => 'default', 'text' => '?'],
-                            ['type' => 'text', 'text' => 'Lawang Sewu'],
-                            ['type' => 'default', 'text' => '?'],
-                            ['type' => 'default', 'text' => '?'],
-                            ['type' => 'default', 'text' => '?'],
-                            ['type' => 'text', 'text' => 'Gedung Seribu Pintu'],
-                            ['type' => 'default', 'text' => '?'],
+                        $steps = [
+                            ['number' => 1, 'color' => '#C1440E', 'title' => 'Pilih Pulau', 'desc' => 'Mulai dari Sumatera, Jawa, Bali, Kalimantan, Sulawesi, atau Papua'],
+                            ['number' => 2, 'color' => '#D4A017', 'title' => 'Buka 3 Kartu', 'desc' => 'Buka tiga kartu sekaligus untuk mencari trilogi yang cocok'],
+                            ['number' => 3, 'color' => '#1F7A8C', 'title' => 'Cocokkan Trilogi', 'desc' => 'Tiga kartu berkaitan akan hilang (gambar + nama + deskripsi)'],
+                            ['number' => 4, 'color' => '#FF6B35', 'title' => 'Raih Poin', 'desc' => 'Semakin cepat selesai, semakin banyak poin yang didapat'],
                         ];
                     @endphp
-                    
-                    @foreach($gameCards as $card)
-                        @if($card['type'] === 'image')
-                            <div class="game-card image-card">
-                                <img src="{{ $card['src'] }}" alt="Card Image" class="card-image">
+                    @foreach($steps as $step)
+                        <div class="step-item">
+                            <div class="step-number" style="background: {{ $step['color'] }}; color: {{ $step['number'] === 2 ? '#0a0e27' : 'white' }};">
+                                {{ $step['number'] }}
                             </div>
-                        @elseif($card['type'] === 'text')
-                            <div class="game-card text-card">
-                                <div class="card-text">{{ $card['text'] }}</div>
+                            <div>
+                                <h3 class="step-title">{{ $step['title'] }}</h3>
+                                <p class="step-desc">{{ $step['desc'] }}</p>
                             </div>
-                        @elseif($card['type'] === 'matched')
-                            <div class="game-card matched">{{ $card['text'] }}</div>
-                        @else
-                            <div class="game-card">{{ $card['text'] }}</div>
-                        @endif
+                        </div>
                     @endforeach
-                    <div class="game-card">?</div>
+                </div>
+
+                <!-- Game Grid (cards) - SMALLER BOX SIZE -->
+                <div class="game-grid-wrapper">
+                    <div class="game-grid">
+                        @php
+                            $gameCards = [
+                                ['type' => 'image', 'src' => asset('images/trilogi/lawangsewu.jpg')],
+                                ['type' => 'default', 'text' => '?'],
+                                ['type' => 'default', 'text' => '?'],
+                                ['type' => 'text', 'text' => 'Lawang Sewu'],
+                                ['type' => 'default', 'text' => '?'],
+                                ['type' => 'default', 'text' => '?'],
+                                ['type' => 'default', 'text' => '?'],
+                                ['type' => 'text', 'text' => 'Gedung Seribu Pintu'],
+                            ];
+                        @endphp
+                        @foreach($gameCards as $card)
+                            @if($card['type'] === 'image')
+                                <div class="game-card image-card">
+                                    <img src="{{ $card['src'] }}" alt="Card Image" class="card-image">
+                                </div>
+                            @elseif($card['type'] === 'text')
+                                <div class="game-card text-card">
+                                    <div class="card-text">{{ $card['text'] }}</div>
+                                </div>
+                            @else
+                                <div class="game-card">{{ $card['text'] }}</div>
+                            @endif
+                        @endforeach
+                        <div class="game-card">?</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -897,7 +931,6 @@
                     ['icon' => '🏆', 'title' => 'Gameplay Seru', 'desc' => 'Naik level, raih nilai tertinggi, dan bersaing dengan pemain lain di leaderboard'],
                 ];
             @endphp
-
             @foreach($features as $feature)
                 <div class="feature-card">
                     <div class="feature-icon">{{ $feature['icon'] }}</div>
