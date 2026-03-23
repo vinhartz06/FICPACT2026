@@ -14,7 +14,7 @@ Route::get('/auth/handoff', [WebAuthController::class, 'handoff'])->name('auth.h
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
 
 // Link / cache lama ke map.html (file sudah dihapus) → dashboard Pilih Pulau
 Route::get('/map.html', function () {

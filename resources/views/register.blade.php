@@ -14,7 +14,7 @@
 <body class="min-h-screen relative flex items-center justify-center p-4">
     {{-- Fullscreen Background --}}
     <div class="fixed inset-0 z-0">
-        <img src={{ asset('images/toba.jpg') }}
+        <img src={{ asset('images/register.jpg') }}
              alt="Indonesia Background" 
              class="w-full h-full object-cover">
         {{-- Gradient Overlay --}}
@@ -135,6 +135,13 @@
                     <p class="text-center text-white/80 text-sm">
                         Sudah punya akun? 
                         <a href="{{ route('login') }}" class="text-[#D4A017] font-semibold hover:text-[#C1440E] transition-colors duration-300">Masuk</a>
+                    </p>
+
+                    {{-- Back --}}
+                    <p class="text-center text-white/70 text-sm mt-2 italic">
+                        <a href="{{ route('landing') }}" class="hover:underline">
+                            ← Kembali ke Beranda
+                        </a>
                     </p>
                 </form>
             </div>
