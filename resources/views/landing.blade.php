@@ -1014,7 +1014,7 @@
             </p>
             <div class="hero-cta">
                 <a href="#" class="btn btn-play">▶ Mainkan Sekarang</a>
-                <a href="{{ route('login') }}" class="btn btn-masuk">Masuk</a>
+                {{-- <a href="{{ route('login') }}" class="btn btn-masuk">Masuk</a> --}}
                 <a href="{{ route('register') }}" class="btn btn-secondary">Daftar</a>
             </div>
         </div>

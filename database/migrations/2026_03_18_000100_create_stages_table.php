@@ -12,7 +12,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('city_name');
-            $table->string('region')->default('Jawa Tengah');
+            $table->string('region');
+            $table->text('desc1')->nullable();
+            $table->text('desc2')->nullable();
             $table->unsignedInteger('stage_number');
             $table->boolean('is_boss_stage')->default(false);
             $table->timestamps();

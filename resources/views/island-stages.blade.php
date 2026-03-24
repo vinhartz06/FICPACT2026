@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pilih Stage · {{ $islandTitle }} · Trilogi Nusantara</title>
+    <title>Pilih Stage · {{ $islandTitle }} - Trilogi Nusantara</title>
     @vite(['resources/css/app.css'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,9 +195,9 @@
                 <p class="text-center text-xs text-amber-200/40 mt-4 shrink-0">Atau pilih dari daftar:</p>
                 <ul class="mt-2 space-y-2 max-w-lg mx-auto w-full pb-6 shrink-0" id="stage-list-fallback" aria-label="Daftar stage">
                     @foreach ($stages as $s)
-                        <li>
+                        <li class="flex items-center gap-2">
                             <a href="{{ url('/play') }}?stage={{ $s->id }}"
-                               class="stage-row flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-3 transition-all text-sm"
+                               class="stage-row flex-1 flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-3 transition-all text-sm"
                                data-stage-number="{{ $s->stage_number }}"
                                data-stage-id="{{ $s->id }}">
                                 <div>
@@ -206,12 +206,127 @@
                                 </div>
                                 <span class="text-lg" aria-hidden="true">▶</span>
                             </a>
+                            <button type="button"
+                                    class="info-button shrink-0 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center transition-colors"
+                                    data-city-name="{{ $s->city_name }}"
+                                    data-city-desc1="{{ $s->desc1 ?? '' }}"
+                                    data-city-desc2="{{ $s->desc2 ?? '' }}"
+                                    aria-label="Informasi {{ $s->city_name }}">
+                                <span class="text-sm text-amber-200/80 font-serif italic">i</span>
+                            </button>
                         </li>
                     @endforeach
                 </ul>
             @endif
         </div>
     </main>
+
+    {{-- Modal for city information --}}
+    <div id="info-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-all duration-200" style="display: none;">
+        <div class="bg-gradient-to-br from-[#2A241F] to-[#1F1B18] rounded-2xl max-w-md w-full border border-white/20 shadow-2xl overflow-hidden animate-fade-in-up">
+            <div class="flex justify-between items-center border-b border-white/10 px-5 py-3 bg-black/20">
+                <h3 id="modal-city-name" class="text-lg sm:text-xl font-bold text-[#F7D98C]">Kota</h3>
+                <button id="modal-close-btn" class="text-amber-200/70 hover:text-white text-2xl leading-none transition">&times;</button>
+            </div>
+            <div class="p-5 space-y-3 text-[#FCE6C4]">
+                <p id="modal-desc1" class="text-sm leading-relaxed text-amber-100/90"></p>
+                <p id="modal-desc2" class="text-sm leading-relaxed text-amber-100/80 pt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Modal elements
+            const modal = document.getElementById('info-modal');
+            const modalCityName = document.getElementById('modal-city-name');
+            const modalDesc1 = document.getElementById('modal-desc1');
+            const modalDesc2 = document.getElementById('modal-desc2');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            function openModal(cityName, desc1, desc2) {
+                modalCityName.textContent = cityName;
+                modalDesc1.textContent = desc1 && desc1.trim() !== '' ? desc1 : 'Informasi belum tersedia.';
+                modalDesc2.textContent = desc2 && desc2.trim() !== '' ? desc2 : '';
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            // Close modal on button click
+            if (modalCloseBtn) {
+                modalCloseBtn.addEventListener('click', closeModal);
+            }
+
+            // Close modal when clicking outside the modal content
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Attach event listeners to all info buttons
+            const infoButtons = document.querySelectorAll('.info-button');
+            infoButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const cityName = this.getAttribute('data-city-name') || 'Kota';
+                    const desc1 = this.getAttribute('data-city-desc1') || '';
+                    const desc2 = this.getAttribute('data-city-desc2') || '';
+                    openModal(cityName, desc1, desc2);
+                });
+            });
+
+            // Optional: close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+
+    <style>
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.2s ease-out forwards;
+        }
+
+        /* BELOW 1000px: hide Trilogi Nusantara title, buttons emoji only */
+        @media (max-width: 1000px) {
+            nav h1 {
+                display: none !important;
+            }
+            nav .group span:not([aria-hidden="true"]) {
+                display: none !important;
+            }
+        }
+
+        /* ABOVE 1000px: show Trilogi Nusantara title and button text */
+        @media (min-width: 1001px) {
+            nav h1 {
+                display: block !important;
+            }
+            nav .group span:not([aria-hidden="true"]) {
+                display: inline-block !important;
+            }
+        }
+    </style>
 
     <script>window.TRILOGI_HOME_URL = @json(url('/'));</script>
     <script src="{{ asset('js/auth.js') }}"></script>
