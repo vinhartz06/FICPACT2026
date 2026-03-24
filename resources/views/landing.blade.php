@@ -88,11 +88,11 @@
             bottom: 0;
             background-image:
                 linear-gradient(180deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 46, 0.5) 50%, rgba(10, 14, 39, 0.55) 100%),
-                url('{{ asset("images/indonesia.jpg") }}');
+                url('{{ asset("images/landing-page.png") }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 1;
+            opacity: 0.5;
             z-index: 1;
         }
 
@@ -1054,7 +1054,7 @@
                     <div class="game-grid">
                         @php
                             $gameCards = [
-                                ['type' => 'image', 'src' => asset('images/trilogi/lawangsewu.jpg')],
+                                ['type' => 'image', 'src' => asset('images/cards/lawang-sewu.jpg')],
                                 ['type' => 'default', 'text' => '?'],
                                 ['type' => 'default', 'text' => '?'],
                                 ['type' => 'text', 'text' => 'Lawang Sewu'],
@@ -1108,7 +1108,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-title">Trilogi Nusantara</div>
-            <div class="footer-tagline">"Temukan, Hubungkan, Jelajahi Nusantara."</div>
+            <div class="footer-tagline">"Rangkai Fakta, Kenali Bangsa"</div>
             <div class="footer-links">
                 <a href="#" class="footer-link">Tentang Kami</a>
                 <a href="#" class="footer-link">Hubungi Kami</a>

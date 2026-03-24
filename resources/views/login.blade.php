@@ -14,9 +14,9 @@
 <body class="min-h-screen relative flex items-center justify-center p-4">
     {{-- Fullscreen Background --}}
     <div class="fixed inset-0 z-0">
-        <img src={{ asset('images/login.jpg') }}
+        <img src={{ asset('images/login-page.png') }}
              alt="Indonesia Background" 
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover opacity-75">
         {{-- Gradient Overlay --}}
         <div class="absolute inset-0 bg-gradient-to-br from-[#C1440E]/90 via-[#D4A017]/70 to-[#1F7A8C]/80 mix-blend-multiply"></div>
         {{-- Batik Pattern Overlay --}}
