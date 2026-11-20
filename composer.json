@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "The skeleton application for Laravel.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
@@ -57,6 +57,9 @@
         }
     },
     "config": {
+        "platform": {
+            "php": "8.3.37"
+        },
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
