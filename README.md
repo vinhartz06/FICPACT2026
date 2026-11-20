@@ -32,7 +32,6 @@
 - [Struktur Database](#struktur-database)
 - [Dokumentasi API](#dokumentasi-api)
 - [Panduan Instalasi &amp; Menjalankan Lokal](#panduan-instalasi--menjalankan-lokal)
-- [Panduan Build &amp; Deployment (CI/CD)](#panduan-build--deployment-cicd)
 - [Tim Pengembang](#tim-pengembang)
 
 ---
